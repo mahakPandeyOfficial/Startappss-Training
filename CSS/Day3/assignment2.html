@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="assignment2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Startappss System</div>
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+        <div class="content">
+            <h1>Welcome to Startappss System</h1>
+            <p>This is a simple navigation bar example.</p>
+        </div>
+
+      <script>
+        const toggle = document.getElementById('menu-toggle');
+        const links = document.getElementById('nav-links');
+    
+        toggle.addEventListener('click', () => {
+          links.classList.toggle('active');
+        });
+      </script>
+
+    
+</body>
+</html>

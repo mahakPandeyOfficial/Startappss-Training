@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fdf0dc;
+  }
+  
+  .contact-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    color: #bd2edd;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    text-align: center;
+    color: #6c6c6c;
+    margin-bottom: 40px;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #6c6c6c;
+  }
+  
+  .info-item svg {
+    color: #6c6c6c;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .highlight {
+    //background: #f5f1fd;
+    border-radius: 10px;
+    //padding: 10px 24px;
+    //color: #bd2edd;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .form-left,
+  .form-right {
+    flex: 1;
+    min-width: 280px;
+  }
+  
+  label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .input-icon {
+    display: flex;
+    align-items: center;
+    border: 2px solid #cfcfcf;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  
+  .input-icon svg {
+    margin-right: 8px;
+    color: #bd2edd;
+  }
+  
+  input,
+  textarea {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    flex: 1;
+    padding: 7px;
+  }
+  
+  textarea {
+    width: 90%;
+    height: 205px;
+    resize: none;
+    border: 2px solid #cfcfcf;
+    border-radius: 8px;
+    padding: 12px;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #bd2edd;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #9218ad;
+  }
+  

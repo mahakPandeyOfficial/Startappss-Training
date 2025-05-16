@@ -1,0 +1,13 @@
+
+
+.app-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+.blog-header h1 {
+    font-size: 3rem;
+     margin-bottom: 10px;
+} 
+

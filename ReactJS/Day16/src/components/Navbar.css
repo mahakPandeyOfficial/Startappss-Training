@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fef6e4;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    height: 60vh;
+    box-sizing: border-box;
+  }
+  
+  .hero h1 {
+    font-size: 5rem;
+    margin: 0;
+  }
+  
+  .right-navbar {
+
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 500px;
+    border-radius: 10px;
+  }
+  
+  .right-navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;            /* Make it a flex container */
+    flex-direction: row;      /* Arrange items in a row */
+    gap: 80px;       
+  }
+  
+  .right-navbar li {
+    margin-bottom: 10px;
+  }
+  
+  .right-navbar a {
+    color: #fef6e4;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .right-navbar a:hover {
+    text-decoration: underline;
+    color: #402E2A;
+  }
+  

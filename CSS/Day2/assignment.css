@@ -1,0 +1,157 @@
+*{
+   margin: 0;
+    padding: 0; 
+
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+
+    h2 {
+        color: #333;
+        font-size: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin: 20px 0;
+        text-align: center;
+    }
+}
+header {
+    background-color: black;
+    background-size: cover;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1{
+        color: white;
+
+      }
+}
+
+.logo {
+    margin-left: 20;
+    margin-right: 25;
+    margin-top: 10;
+    margin-bottom: 10;
+    width: 80px;
+    height: 80px;
+    border-radius: 30%;
+}
+
+nav{
+    color: white;
+    margin-right: 20;
+    margin-top: 10; 
+    margin-bottom: 10;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+        display: inline;
+        margin: 0 20px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+      }  
+
+      
+}
+
+/* Container to hold both sidebars side-by-side */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  /* Common sidebar styles */
+  .left-sidebar, .right-sidebar {
+    width: 45%;
+    padding: 20px;
+    background: #f4f4f8;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Left sidebar specific */
+  .left-sidebar h3 {
+    color: #2a2a72;
+    margin-bottom: 30px;
+  }
+  .left-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  .left-sidebar ul li {
+    margin: 10px 0;
+  }
+  .left-sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  .left-sidebar ul li a:hover {
+    color: #2a2a72;
+    text-decoration: underline;
+  }
+  
+  /* Right sidebar (Contact Form) */
+  .right-sidebar h3 {
+    color: #2a2a72;
+    margin-bottom: 15px;
+  }
+  .right-sidebar form {
+    display: flex;
+    flex-direction: column;
+  }
+  .right-sidebar label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  .right-sidebar input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .right-sidebar button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #2a2a72;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .right-sidebar button:hover {
+    background-color: #1a1a52;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .left-sidebar, .right-sidebar {
+      width: 100%;
+    }
+  }
+  
+

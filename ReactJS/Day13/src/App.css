@@ -1,0 +1,11 @@
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  
+}

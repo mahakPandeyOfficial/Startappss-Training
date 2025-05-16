@@ -1,0 +1,72 @@
+/* Container with left stripe and card content */
+.blog-card-wrapper {
+    display: flex;
+    border-bottom: 1px solid #EF88AD; /* separator between blog cards */
+    background-color: #3A0519; /* dark background */
+  }
+
+  .blog-card-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+    background-color: #1a1a1d; /* Optional: darken slightly on hover */
+  }
+  
+  /* Left-side diagonal stripe */
+  .blog-left-stripe {
+    width: 24px;
+    background-image: repeating-linear-gradient(
+      45deg,
+      #670D2F,
+      #670D2F 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  }
+  
+  /* Main content container */
+  .blog-card {
+    flex: 1;
+    padding: 1.5rem;
+    color: #EAEAEA;
+    background-color: #3A0519;
+  }
+  
+  /* Meta (date + author) */
+  .blog-meta {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  /* Blog title */
+  .blog-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Blog excerpt */
+  .blog-excerpt {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+  }
+  
+  /* Read more link */
+  .read-more a {
+    color: #F472B6; /* Tailwind rose-400 */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .read-more a:hover {
+    color: #F9A8D4; /* Tailwind rose-300 */
+    text-decoration: underline;
+  }
+  
