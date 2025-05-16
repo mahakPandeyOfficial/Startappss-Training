@@ -2,6 +2,43 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import BlogList from "./components/BlogList";
 import keyboard from "./assets/keyboard.png"; 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+//import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Post from "./components/Post";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>
+      <Navbar />
+      <BlogList />
+    </div>
+  },
+  {
+    path: "/post",
+    element: <div>
+      <Navbar />
+      <Post />
+    </div>
+  },
+  {
+    path: "/about",
+    element: <div>
+      <Navbar />
+      <About />
+      </div>
+  },
+  {
+    path: "/contact",
+    element: <div>
+      <Navbar />
+      <Contact />
+      </div>
+  },
+])
 
 
 const App = () => {
@@ -17,9 +54,7 @@ const App = () => {
 
       {/* ✅ Page content layered above */}
       <div className="relative z-10">
-        <Navbar />
-        
-        <BlogList />
+       <RouterProvider router={router}/>
       </div>
     </div>
   );

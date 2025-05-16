@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar';
 import BlogList from './BlogList';
-import keyboardImage from "../assets/keyboardImage.png";
+import keyboardImage from "../assets/keyboard.png";
 
 function Home() {
   return (

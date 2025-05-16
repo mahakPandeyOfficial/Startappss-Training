@@ -12,7 +12,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 40px;
+    padding: 50px;
     height: 60vh;
     box-sizing: border-box;
   }
@@ -26,7 +26,7 @@ body {
 
     background: rgba(0, 0, 0, 0.3);
     padding: 20px;
-    width: 500px;
+    width: 400px;
     border-radius: 10px;
   }
   
