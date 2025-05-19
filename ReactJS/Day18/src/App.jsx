@@ -19,7 +19,7 @@ function App() {
         </nav>
 
 
-// Step 5. Define routes for the app
+{/* Step 5. Define routes for the app */}
         {/* The Routes component contains all the routes for the app */}
         {/* Each Route component defines a path and the corresponding component to render */}
         <Routes>

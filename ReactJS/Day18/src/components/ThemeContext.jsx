@@ -25,7 +25,7 @@ export const ThemeProvider = ({ children }) => {
   return (
     // Step 4. Provide the context to children
     <ThemeContext.Provider value={value}>
-      <div className={theme === 'dark' ? 'dark-theme' : 'light-theme'}> //Conditional className based on theme
+      <div className={theme === 'dark' ? 'dark-theme' : 'light-theme'}> {/*//Conditional className based on theme*/}
         {children}
       </div>
     </ThemeContext.Provider>
