@@ -1,6 +1,8 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink ,Link } from "react-router-dom";
+
+//by using NavLink we can add active class to the link
 
 const Navbar = () => {
   return (
@@ -11,14 +13,14 @@ const Navbar = () => {
       <nav className="right-navbar">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
         
           <li>
-            <Link to="/about">About</Link>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
         </ul>
       </nav>
