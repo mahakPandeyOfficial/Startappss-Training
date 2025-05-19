@@ -32,3 +32,13 @@ function App() {
 }
 
 export default App;
+
+
+
+
+//Context Api ke steps are as following:
+
+// Step 1. Create context
+//Step 2. Wrap all the components within the context provider
+// Step 3: Pass the value to the provider
+// Step 4: Use the context in the components or consumer ke andar jake useContext hook ko consume karna hai! { Here we are using the useTheme hook inside the ThemeContext file for togggling the theme. }
