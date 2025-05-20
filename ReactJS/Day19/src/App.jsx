@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import MovieList from './MovieList';
 import SearchBar from './SearchBar';
 
 const App = () => {
+ 
 
-  {/*List of 25 Bollywood Movie - having ID, Title, Year, Director*/ }
-  const allMovies = [
-   
+  ////////////////////////////////////React Memo and useMemo//////////////////////////////////////
+  //React.memo is usefull when there is a functional component that renders the same output given the same input
+  //useMemo is used to memoize the result of a function (which is a VALUE) so that it doesn't need to be recalculated on every render. it prevents from expensive calculation on every time in every render.
+
+  const [query, setQuery] = useState('');
+
+  // useMemo for filtering used to optimize performance
+  // It will only recompute the filteredMovies when query changes
+  // This is useful for performance optimization, especially when dealing with large datasets
+  const filteredMovies = useMemo(() => {
+
+    const allMovies = [
       { id: 1, title: 'Sholay', year: 1975, director: 'Ramesh Sippy' },
       { id: 2, title: 'Dilwale Dulhania Le Jayenge', year: 1995, director: 'Aditya Chopra' },
       { id: 3, title: 'Lagaan', year: 2001, director: 'Ashutosh Gowariker' },
@@ -32,26 +42,19 @@ const App = () => {
       { id: 23, title: 'Bajrangi Bhaijaan', year: 2015, director: 'Kabir Khan' },
       { id: 24, title: 'Rockstar', year: 2011, director: 'Imtiaz Ali' },
       { id: 25, title: 'Black', year: 2005, director: 'Sanjay Leela Bhansali' },
-    
-    
-  ];
+    ];
 
-  const [query, setQuery] = useState('');
+    return allMovies.filter(movie =>
+      movie.title.toLowerCase().includes(query.toLowerCase())
+    );
+  }, [query]);
 
-  {/* This is filtering the movies based on there Title and toLowerCase is converting the input into lower case and aslso matching it in Movie List  given  */}
-  
-  const filteredMovies = allMovies.filter(movie =>
-    movie.title.toLowerCase().includes(query.toLowerCase())      
-  );
-
-  return (<>
-
+  return (
     <div className="app" style={{ fontFamily: 'Arial', padding: '20px' }}>
       <h1>🎬 Movie Mania</h1>
-      <SearchBar  query={query} setQuery={setQuery} />
+      <SearchBar query={query} setQuery={setQuery} />
       <MovieList movies={filteredMovies} />
     </div>
-    </>
   );
 };
 
