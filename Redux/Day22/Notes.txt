@@ -39,3 +39,10 @@
 
         }
      } 
+
+3. ACTIONS :
+  
+  - The Only way that your application can interact with the store is Action.
+  - Actions are payloads that send data from your application to the store.
+  - Actions are plain JavaScript objects. They don't mutate the state. They simply describe changes to
+  - Carry Some information from your app to the redux store.
