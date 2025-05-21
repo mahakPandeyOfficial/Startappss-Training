@@ -1,0 +1,41 @@
+1. Three Core Concepts of Redux : 
+
+ # STORE
+
+   -the store holds the state of your Application
+ 
+ # ACTION 
+   
+  -an action that decribes the changes in the state of the Application
+
+ # REDUCER
+
+  -A Reducer which carries out the state transition depending on the action.
+
+2. Three Principles of Redux :
+
+  # First Principle = "The State of your whole Application is stored in an object tree within a single store".
+     // Lets assume we are tracking the no. of cakes on the shelf
+     {
+        numberOfCakes: 10
+     } 
+
+   # Second Principle = "The only way to change the state is to emit an action, an object dsecribing what happened"  
+     // Let the ShopKeeper know about your action of BUY_CAKE
+     {
+        type: 'BUY_CAKE',
+     }
+
+   # Third Principle = "To specify how the state tree is transformed by actions, you write pure reducers"
+
+     - Reducer - (previousState, action) => newState
+
+     //Reducer is the ShopKeeper
+     const reducer = (state, action) => {
+        switch(action.type) {
+            case 'BUY_CAKE': return {
+                numberOfCakes: state.numberOfCakes - 1;
+            }
+
+        }
+     } 
