@@ -46,3 +46,26 @@
   - Actions are payloads that send data from your application to the store.
   - Actions are plain JavaScript objects. They don't mutate the state. They simply describe changes to
   - Carry Some information from your app to the redux store.
+
+4. REDUCERS :
+
+  - It Specify How the state changes in response to an Actions sent to the store.
+  - Reducers are pure functions that take the current state and an action as arguments, and return the next state of the application.
+
+
+5. STORE :
+
+  - One Store for the entire application
+   * Key Responsiblity :
+   - Holds Application state    //Step 1
+   - Allows access to state via getState()   //Step 2
+   - Allow state to be updated via dispatch(action)   //Step 3
+   - Register listners via subscribe(listner)   //Step 4
+   - Handle unregistering of listners via the function returned by subscribe(listner)   //Step 5
+   - Store is the central place of your application where all the data is stored.
+
+   ** NOTE : When you call store.dispatch(action), it sends the action to reducers, updates the state, then calls all subscribed listeners.
+
+
+### 🔧 How Redux Manages Global State in Large Applications
+Redux is designed to centralize and manage state in a predictable and scalable way. In large applications with many components and data flows, Redux helps keep the logic clean and maintainable. Here's how it does that:
