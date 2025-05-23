@@ -68,4 +68,28 @@
 
 
 ### 🔧 How Redux Manages Global State in Large Applications
-Redux is designed to centralize and manage state in a predictable and scalable way. In large applications with many components and data flows, Redux helps keep the logic clean and maintainable. Here's how it does that:
+Redux is designed to centralize and manage state in a predictable and scalable way. In large applications with many components and data flows, Redux helps keep the logic clean and maintainable.
+
+### MIDDLEWARE
+
+  - Is the suggested way to extend redux with custom functionality
+  - Provides a third-party extension point between disptaching an action, and the moment it reaches the reducer
+  - Use middleware for logging, crash reporting, performing asynchronous tasks etc
+
+Middleware = Action aur Reducer ke beech ka filter
+
+Side effects handle karta hai (like API, logs)
+
+Redux ko aur powerful aur flexible banata hai
+
+
+
+🧪 Popular Middleware
+Naam	             Kya karta hai
+
+redux-thunk	    -   Asynchronous kaam (jaise API call) handle karta hai
+redux-logger	  -   Console me actions aur state dikhaata hai
+redux-saga	    -   Advanced async kaam generator functions ke saath
+
+
+
