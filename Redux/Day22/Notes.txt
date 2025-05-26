@@ -92,4 +92,30 @@ redux-logger	  -   Console me actions aur state dikhaata hai
 redux-saga	    -   Advanced async kaam generator functions ke saath
 
 
+### Async Actions : asynchronous API calls to fetch data from an end points and use that data in your application.
 
+ ???? State object : 
+syntax -----> 
+      state = {
+        loading : true,
+        data: [],
+        error: ''
+      }
+ loading = Display a loading spinner in your components
+ data = List of users
+ error = Display error message to users
+
+ ???? Actions :
+    1. FETCH_USER_REQUEST = fetches list of users
+    2. FETCH_USER_SUCCESS = fetched successfully 
+    3. FETCH_USER_FAILURE = error in fetching the data 
+
+ ???? Reducers :
+   case : FETCH_USER_REQUEST
+     loading : true
+   case : FETCH_USER_SUCCESS
+     loading : false
+     user : data (from API)
+   case : FETCH_USER_FAILURE
+     loading : false
+     error: error (from API)     

@@ -14,6 +14,8 @@ const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 
 
 //Action Creators
+
+//Async Actions are used to fetch the user or data from API endpoint and stores in redux store.
 const fetchDataRequest = () => {
     return {
         type: FETCH_DATA_REQUEST
