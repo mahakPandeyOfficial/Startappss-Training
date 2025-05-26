@@ -92,7 +92,7 @@ redux-logger	  -   Console me actions aur state dikhaata hai
 redux-saga	    -   Advanced async kaam generator functions ke saath
 
 
-### Async Actions : asynchronous API calls to fetch data from an end points and use that data in your application.
+### Async Actions : asynchronous API calls to fetch data from an end points and use that data in your application.     (By default Redux synchronous hota hai , isiliye Middleware jaise redux-thunk ka  use karte hai)
 
  ???? State object : 
 syntax -----> 
@@ -119,3 +119,24 @@ syntax ----->
    case : FETCH_USER_FAILURE
      loading : false
      error: error (from API)     
+
+
+
+### AXIOS
+
+Axios ek JavaScript library hai jo humein HTTP requests (jaise GET, POST, PUT, DELETE) karne mein help karti hai — mainly API se data lene ya bhejne ke liye.
+
+Socho Axios ek postman jaisa tool hai jo tumhare React/Redux app se server ko baat karne deta hai.
+Axios ek easy-to-use tool hai jo tumhare frontend ko backend APIs se connect karta hai — aur fetch se zyada powerful hai.
+
+### Redux-Thunk :
+Thunk ka flow ====> 
+          React Component
+              ↓
+          dispatch(thunkFunction)
+              ↓
+          middleware (redux-thunk)
+              ↓
+          Runs async code
+              ↓
+          dispatch({ type: 'SUCCESS', payload: data })

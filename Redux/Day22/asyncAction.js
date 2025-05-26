@@ -1,5 +1,9 @@
 const redux = require('redux');
 const createStore = redux.createStore;
+const applyMiddleware = redux.applyMiddleware;
+const thunkMiddleware = require('redux-thunk').default;
+const axios = require('axios');
+
 //State the initial state
 const initialState = {
     loading: false,
@@ -57,4 +61,20 @@ const reducer = (state = initialState, action) =>{
     }
 }
 
-const store = createStore(reducer);
+//Async Action Creator .... using Thunk Middleware - What Thunk takes to the table is that It returns a function instead of an action object.
+const fetchData = () => {
+   return function(dispatch) {   //These functions are having benifits that they dont have to be pure functions , they can have side effects and can perform aync operations.
+
+    axios.get('https://jsonplaceholder.typicode.com/users')
+        .then(response => {
+             //response.data will give you user data, it is an array of users objects 
+        })
+        .catch(error => {
+            //error.message will give you error messsage here
+        })
+    
+
+   }
+}
+
+const store = createStore(reducer, applyMiddleware(thunkMiddleware));
