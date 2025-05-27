@@ -40,17 +40,25 @@
         }
      } 
 
-3. ACTIONS :
+3. ACTIONS :  An action is a plain JavaScript object that has a type field. You can think of an action as an event that describes something that happened in the application.
   
   - The Only way that your application can interact with the store is Action.
   - Actions are payloads that send data from your application to the store.
   - Actions are plain JavaScript objects. They don't mutate the state. They simply describe changes to
   - Carry Some information from your app to the redux store.
 
-4. REDUCERS :
+  An action creator is a function that creates and returns an action object.
+
+4. REDUCERS :   A reducer is a function that receives the "current state" and an "action object", decides how to update the state if necessary, and returns the new state: (state, action) => newState. You can think of a reducer as an event listener which handles events based on the received action (event) type.
 
   - It Specify How the state changes in response to an Actions sent to the store.
   - Reducers are pure functions that take the current state and an action as arguments, and return the next state of the application.
+
+  Reducers must always follow some specific rules:
+
+ --They should only calculate the new state value based on the state and action arguments
+ --They are not allowed to modify the existing state. Instead, they must make immutable updates, by copying the existing state and       making changes to the copied values.
+ --They must be "pure" - they cannot do any asynchronous logic, calculate random values, or cause other "side effects"
 
 
 5. STORE :
