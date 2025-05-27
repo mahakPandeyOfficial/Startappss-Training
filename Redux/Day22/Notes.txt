@@ -148,3 +148,29 @@ Thunk ka flow ====>
           Runs async code
               ↓
           dispatch({ type: 'SUCCESS', payload: data })
+
+### Connect() : connect() is a function that connects your React component to the Redux store.
+
+   It lets your component:
+
+      -- Read data from the store (using mapStateToProps)
+
+      -- Send actions to the store (using mapDispatchToProps)
+
+## Redux Hooks used in React 
+  
+  1. useSelector() : useSelector() is a React-Redux hook that lets your component read data from the Redux store. It is work as a mapStateToProps which is used previously in connect().
+
+               -> Think of it like asking Redux: “Hey, what’s the current value of this state?”
+               -> Works only in function components, Replaces mapStateToProps and connect() in modern apps
+        SYNTAX => 
+              import { useSelector } from 'react-redux' 
+              const cart = useSelector(state => state.cart)      
+
+  2. useDispatch() : useDispatch() is a React-Redux hook used to send actions to the Redux store.
+
+              -> Think of it like telling Redux: "Hey, I want to update the state!"
+              -> No need for connect() or class components, It Read state with useSelector, change it with useDispatch, the dispatch() is synchronous unless you use middleware like redux-thunk
+      SYNTAX=> 
+              import { useDispatch } from 'react-redux';
+              const dispatch = useDispatch();

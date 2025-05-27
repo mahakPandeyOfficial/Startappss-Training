@@ -3,7 +3,7 @@ import { useSelector, useDispatch  }  from 'react-redux';
 import { removeFromCart} from '../actions/cartActions';
 
 function Cart() {
-    const cart = useSelector(state => state.cart);
+    const cart = useSelector(state => state.cart);             //state is the entire redux store, and cart is the cart state from the store
     const dispatch = useDispatch();
 
     return (
