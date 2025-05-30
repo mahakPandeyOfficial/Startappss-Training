@@ -1,0 +1,11 @@
+### Step 1: Create a React App using Vite 
+           cmd = npm create vite@latest ECommerceApp
+           cd ECommerceApp
+           npm install
+
+### Step 2: Install Essential packages
+        BootStrap = npm i bootstrap 
+        Font Awesome Library = npm i font-awesome 
+        Redux and React-Redux = npm i redux react-redux
+        React router Dom = npm i react-router-dom 
+        Redux Dev Tools Extenstion pack = npm install --save @redux-devtools/extension
