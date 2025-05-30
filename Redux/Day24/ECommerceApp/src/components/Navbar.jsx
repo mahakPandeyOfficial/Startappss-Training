@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg py-3 shadow-sm" style={{ backgroundColor: '#FFF2EB' }}>
+      <nav class="navbar navbar-expand-lg py-3 shadow-sm" style={{ backgroundColor: '#FFD6BA' }}>
         <div class="container">
           <a class="navbar-brand fw-bold fs-4" href="#">
             ECommerceApp
