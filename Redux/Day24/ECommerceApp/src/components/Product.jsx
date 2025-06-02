@@ -61,7 +61,7 @@ const Product = () => {
                     <p className='lead'>{product.description}</p>
                     <button className='btn btn-outline-dark px-3 py-2'>
                     <i class="fa fa-shopping-cart" aria-hidden="true" /> Add to Cart</button>
-                    <NavLink to="/cart" className='btn btn-outline-dark ms-2 px-3 py-2'>
+                    <NavLink to="/cart" className='btn btn-border-light btn-dark text-light ms-2 px-3 py-2'>
                     <i class="fa fa-money" aria-hidden="true"/> Go to Cart</NavLink>
 
                 </div>
