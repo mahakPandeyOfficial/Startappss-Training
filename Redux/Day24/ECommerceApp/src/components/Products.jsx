@@ -11,25 +11,26 @@ const Products = () => {
   
 
   useEffect(() => {
-    let componentMounted = true;    // This variable is used to track if the component is still mounted to avoid memory leaks
-    //async function created here
+    let componentMounted = true;
+  
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("https://api.escuelajs.co/api/v1/products"); //here we have used fake store api which will fetch the data
-
+      const response = await fetch("https://api.escuelajs.co/api/v1/products");
+  
       if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
+        const data = await response.clone().json();
+        setData(data);
+        setFilter(data);
         setLoading(false);
-        console.log(filter);
       }
-
-      return () => {
-        componentMounted = false;
-      };
     };
-
-    getProducts(); //fuunction called here
+  
+    getProducts();
+  
+    // ✅ correct placement
+    return () => {
+      componentMounted = false;
+    };
   }, []);
 
   {
