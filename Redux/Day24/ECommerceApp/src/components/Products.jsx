@@ -76,11 +76,11 @@ const Products = () => {
           return (
             <>
               <div className="col-md-3 mb-4">
-                <div class="card h-100 text-center p-4" key={product.id} style={{ backgroundColor: "#FFF2EB" }}>
-                  <img src={product.images} class="card-img-top" alt={product.title} />
-                  <div class="card-body">
-                    <h5 class="card-title">{product.title}</h5>
-                    <p class="card-text lead fw-bold">
+                <div className="card h-100 text-center p-4" key={product.id} style={{ backgroundColor: "#FFF2EB" }}>
+                  <img src={product.images} className="card-img-top" alt={product.title} />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.title}</h5>
+                    <p className="card-text lead fw-bold">
                       ${product.price}
                     </p>
                     
