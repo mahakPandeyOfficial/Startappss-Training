@@ -9,3 +9,11 @@
         Redux and React-Redux = npm i redux react-redux
         React router Dom = npm i react-router-dom 
         Redux Dev Tools Extenstion pack = npm install --save @redux-devtools/extension
+
+### Step 3: Build Components
+     - Home = 
+     - Navbar = 
+     - Product = here we have used Fake Store Api : "https://api.escuelajs.co/api/v1/products" which  used to display diffrent prodcuts using its attributes "images, price, title and more".
+
+             **   We are using Loading skeleton library from NPM = " npm i react-loading-skeleton "
+
