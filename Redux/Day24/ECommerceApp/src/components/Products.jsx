@@ -15,7 +15,7 @@ const Products = () => {
   
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("https://api.escuelajs.co/api/v1/products");
+      const response = await fetch("https://api.escuelajs.co/api/v1/products");    //we have used fetch to get the data from the API
   
       if (componentMounted) {
         const data = await response.clone().json();

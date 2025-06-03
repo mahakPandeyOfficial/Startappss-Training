@@ -1,0 +1,31 @@
+### REACT QUERY = TanStack Query (Nowadays called as.)
+
+React Query, जिसे अब TanStack Query कहा जाता है, एक शक्तिशाली लाइब्रेरी है जो React ऐप्स में डेटा फ़ेचिंग और सर्वर स्टेट मैनेजमेंट को आसान बनाती है।
+
+React Query ek open-source JavaScript library hai jo React applications mein asynchronous data fetching aur server state management ko simplify karti hai. Ye REST APIs, GraphQL, ya kisi bhi promise-based data source ke saath kaam kar sakti hai.
+TanStack Query is an open-source JavaScript library created by TanStack that simplifies data fetching and state management in React applications. It offers a range of features designed to make your life as a developer easier, such as data caching, real-time updates, and optimistic updates.
+
+** 🧠 Key Features:
+  - Automatic Caching: Fetched data ko cache karta hai taaki repeat requests fast ho.
+
+  - Background Updates: Data ko background mein refetch karta hai taaki UI hamesha fresh data dikhaye.
+
+  - Pagination & Infinite Scroll: Built-in support for paginated ya infinite-loading data.
+
+  - Error Handling: Loading aur error states ko automatically handle karta hai.
+
+  - DevTools: Dedicated DevTools extension ke saath aata hai taaki queries aur mutations ko inspect kar sakein. (tanstack.com)
+
+
+** 🚀 TanStack Query v5: Latest Updates
+TanStack Query ka latest version v5 hai, jisme kai naye features aur improvements aaye hain:
+
+Single Signature API: useQuery aur similar hooks ab sirf ek object parameter accept karte hain, jo TypeScript support ko simplify karta hai.
+
+Improved Offline Support: Naya networkMode introduce kiya gaya hai taaki offline scenarios mein better handling ho.
+
+Tracked Queries by Default: Ab queries by default tracked hoti hain, jo render performance ko improve karta hai.
+
+Mutation Cache Garbage Collection: Mutations ab automatically garbage collected ho sakti hain, jaise queries hoti hain
+
+
