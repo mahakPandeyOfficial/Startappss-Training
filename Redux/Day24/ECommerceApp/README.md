@@ -106,6 +106,29 @@ npm i react-loading-skeleton
 
  - Cart state managed globally via Redux
 
+### SnapShots:
+
+1. ![image](https://github.com/user-attachments/assets/5238b05a-bd96-4618-b6f6-bf51e17ac3c5)
+2. ![image](https://github.com/user-attachments/assets/81508c44-ac2b-46dc-a893-0564e71376b6)
+3. ![image](https://github.com/user-attachments/assets/ed583969-3be2-4ba5-8fef-6756c2cec709)
+4. ![image](https://github.com/user-attachments/assets/6902c30d-668b-4b22-9abb-ad684de75d92)
+5. ![image](https://github.com/user-attachments/assets/b73bb969-9c2e-4194-8d19-4939078662fb)
+6. ![image](https://github.com/user-attachments/assets/e2c86bf7-4da6-4497-9b45-8c0e9bdc4341)
+7. ![image](https://github.com/user-attachments/assets/608ff12e-a29c-43a5-8b8e-2af45e126349)
+8. ![image](https://github.com/user-attachments/assets/8cafe3cd-f765-4df2-afd2-993bfca74473)
+9. ![image](https://github.com/user-attachments/assets/e1ba4c24-627c-4a5f-afaa-e76602ee2f62)
+10. ![image](https://github.com/user-attachments/assets/ee118493-9811-4558-8dd5-667b55e34776)
+
+
+
+
+
+
+
+
+
+
+
 🧑‍💻 Developer Info
 Author: Mahak Pandey
 
