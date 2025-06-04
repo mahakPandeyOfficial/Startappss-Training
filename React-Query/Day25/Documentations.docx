@@ -29,3 +29,69 @@ Tracked Queries by Default: Ab queries by default tracked hoti hain, jo render p
 Mutation Cache Garbage Collection: Mutations ab automatically garbage collected ho sakti hain, jaise queries hoti hain
 
 
+### QUERIES: 
+📌 Query Kya Hoti Hai?
+React Query mein "query" ka matlab hota hai – kisi async (asynchronous) data source se data fetch karna, jaise API call.
+
+Agar aapko server se data GET ya POST method se fetch karna hai, toh query use karte hain. Agar aapko server pe data change ya update karna hai, toh phir mutation use karte hain.
+
+⚙️ Kaise Banaye Query?
+React Query ka useQuery hook use karke hum component ke andar API se data fetch kar sakte hain.
+
+Aapko useQuery mein do basic cheezein deni hoti hain:
+
+queryKey – ek unique naam (jaise 'todos') jo React Query ko batata hai ki kaunsa data fetch ho raha hai.
+
+queryFn – ek function jo promise return karta hai (jaise fetchTodoList()).
+
+```
+import { useQuery } from '@tanstack/react-query'
+
+function App() {
+  const info = useQuery({
+    queryKey: ['todos'],
+    queryFn: fetchTodoList
+  })
+}
+```
+📌 queryKey se caching, refetching aur query ko share karna possible hota hai.
+React Query (TanStack Query) backend se data fetch karke usse cache (store) karta hai. Ye caching Query Key ke base par hoti hai.
+
+Socho Query Key ek unique name/tag hai, jisse React Query samajh sake ki konsa data kis key ke saath link hai.
+
+📦 Query Result Mein Kya-Kya Hota Hai?
+```
+const result = useQuery({
+  queryKey: ['todos'],
+  queryFn: fetchTodoList
+})
+```
+Is result object mein kuch important states milti hain:
+
+ - isPending: Data abhi load ho raha hai
+
+ - isError: Data fetch karte waqt error aayi
+
+ - isSuccess: Data successfully aa gaya
+
+ - data: Agar success hai, to yeh aapka actual data hota hai
+
+ - error: Agar error hai, to error ka message yahan milta hai
+
+ - isFetching: Agar background mein refetch ho raha ho, to yeh true hota hai
+
+⚙️ Fetch Status Kya Hota Hai?
+React Query ek extra property deta hai – fetchStatus:
+
+ - fetching: Abhi data fetch ho raha hai
+
+ - paused: Fetch hone wala tha, par abhi pause hai (e.g. no internet)
+
+ - idle: Filhal kuch nahi ho raha
+
+🔍 Difference Samjho:
+
+ - status = batata hai data available hai ya nahi
+
+ - fetchStatus = batata hai query run ho rahi hai ya nahi
+
