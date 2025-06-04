@@ -95,3 +95,38 @@ React Query ek extra property deta hai – fetchStatus:
 
  - fetchStatus = batata hai query run ho rahi hai ya nahi
 
+### 🧠 What is QueryClientProvider in React Query?
+🔍 Short Answer:
+QueryClientProvider ek React component hai jo React Query ko pura app mein use karne ka permission deta hai.
+
+Ye ek kind of "context provider" hai jo batata hai:
+“Ye raha mera query client, ab isko sab components use kar sakte hain!”
+
+🧱 React Query ka Setup:
+React Query ko use karne se pehle, aapko ek Query Client banana padta hai. Fir aap us client ko QueryClientProvider ke through poore app mein available karwate ho.
+
+🔧 Basic Setup Example:
+```
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import App from './App'
+
+// Step 1: Create Query Client
+const queryClient = new QueryClient()
+
+// Step 2: Wrap your App with QueryClientProvider
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <QueryClientProvider client={queryClient}>
+    <App />
+  </QueryClientProvider>
+)
+
+```
+
+✅ Why is QueryClientProvider Important?
+Ye React Query ke sare features ko enable karta hai jaise: caching, refetching, mutations, etc.
+
+Agar aap QueryClientProvider ko na lagao, to useQuery ya useMutation jaise hooks kaam nahi karenge.
+
+### QueryClient: It is the core of the react-query libarary. It manages the caching, background fetching, data synchronization, and other query-related logic. It provides a centralized store for managing and caching asynchronous data in your applications.

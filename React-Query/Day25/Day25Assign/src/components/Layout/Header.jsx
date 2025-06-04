@@ -1,12 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import '../../../src/App.css';
 // import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header>
         <div>
-        <NavLink to="/">React Query Learning</NavLink>
+            <h1><NavLink to="/">React Query Learning</NavLink></h1>
+        
                 
             <ul>
                
