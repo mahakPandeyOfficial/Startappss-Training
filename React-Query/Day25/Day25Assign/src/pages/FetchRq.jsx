@@ -9,7 +9,6 @@ const FetchRq = () => {
   const getPostData = async () => {
     try {
       const res = await fetchPosts();
-      console.log(res);
       return res.status === 200 ? res.data : [];
     } catch (error) {
       console.error(error);
@@ -23,10 +22,18 @@ const FetchRq = () => {
     })
     */
 
-    const { data} = useQuery({
+    const { data, isLoading, isError, error } = useQuery({
         queryKey: ['post'],
         queryFn: getPostData
       })
+
+      //by using useQuery, we can directly access data, isLoading , isError and error as it is provided as default by react-query
+      if(isLoading) {
+        return <div>Loading...</div>;
+      }
+      if(isError) {
+        return <div>Error: {error.message}</div>;
+      }
 
   return (
     <div>
