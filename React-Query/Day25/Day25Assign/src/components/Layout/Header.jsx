@@ -7,9 +7,12 @@ const Header = () => {
   return (
     <header>
         <div>
-            <h1><NavLink to="/">React Query Learning</NavLink></h1>
+            
         
-                
+               <h1><NavLink to="/">React Query Learning</NavLink></h1>
+              
+             <nav>
+             
             <ul>
                
                 <li>
@@ -31,6 +34,7 @@ const Header = () => {
                 <NavLink to="/contact">Contact</NavLink>
                 </li>
             </ul>
+            </nav>
         </div>
     </header>
   )

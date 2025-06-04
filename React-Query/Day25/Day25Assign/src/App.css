@@ -5,11 +5,36 @@ body {
     padding: 0;
 }
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
+  background-color: #f0f0f0;
+  padding: 10px 20px;
 }
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+nav ul {
+  display: flex;              /* ✅ makes li items horizontal */
+  list-style: none;           /* removes bullet points */
+  gap: 20px;                  /* spacing between items */
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  /* Optional: basic link styling */
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: #007bff;
+}
+
 footer {
     background-color: #333;
     color: white;
