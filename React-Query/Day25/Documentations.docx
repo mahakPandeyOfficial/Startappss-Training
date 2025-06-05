@@ -130,3 +130,16 @@ Ye React Query ke sare features ko enable karta hai jaise: caching, refetching, 
 Agar aap QueryClientProvider ko na lagao, to useQuery ya useMutation jaise hooks kaam nahi karenge.
 
 ### QueryClient: It is the core of the react-query libarary. It manages the caching, background fetching, data synchronization, and other query-related logic. It provides a centralized store for managing and caching asynchronous data in your applications.
+
+### Diffrence Btw Axios and TanStack Query
+
+
+
+### gcTime = Garbage Collection Time 
+
+In react query v5, the cacheTime option is in react Query has been renamed to gcTime.
+gcTime stands for Garbage Collection Time — it's a setting in TanStack Query (React Query) that determines how long unused query data stays in memory after it becomes unused.
+"After a query becomes unused (no component is using it), React Query will wait gcTime milliseconds before removing it from cache."
+- By Default, inactive queries are garbages collected after 5 mins, this means that if query is not being used for 5 min , the cache for that query will be cleaned up.
+
+You can change the default value of gcTime also as in useQuery hook. 
