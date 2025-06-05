@@ -159,3 +159,50 @@ Default Value: the default staleTime is 0, it means it immediatly Stale after be
 ### Polling 
 
 In React Query , Polling refers to the technique of fetching data from an API at regular interval of time to keep the UI up to date with the latest information. This is very useful for scene where data keeps changing fgrequently and you want to display real time in Ui without  requering the user to manualy refresh the page.
+
+🔁 What is Polling in React Query?
+Polling means automatically refetching data from the server at regular time intervals — like refreshing your app’s data every few seconds.
+
+📦 Why Use Polling?
+To keep data fresh in real-time apps, such as:
+
+📬 Chat apps
+
+📈 Dashboards or stock prices
+
+🔄 Live notifications
+
+✅ How to Use Polling in React Query
+You can use the refetchInterval option in useQuery() to set how often (in milliseconds) data should be refetched.
+
+🔧 Example:
+
+```
+const { data, isLoading } = useQuery({
+  queryKey: ['notifications'],
+  queryFn: fetchNotifications,
+  refetchInterval: 5000  // ⏱ Refetch every 5 seconds
+});
+```
+So here, React Query will automatically call fetchNotifications() every 5 seconds.
+
+🧠 Things to Note:
+Option	                        Purpose
+refetchInterval	                Sets the time interval to poll
+enabled: false	                Turn off polling completely
+refetchIntervalInBackground	    Keep polling even if app tab is inactive
+
+💡 Conditional Polling Example:
+Only poll if user is logged in:
+
+```
+useQuery({
+  queryKey: ['userData'],
+  queryFn: fetchUserData,
+  refetchInterval: isLoggedIn ? 3000 : false
+});
+```
+🧠 Real Life Analogy:
+Imagine you're refreshing a WhatsApp chat every few seconds to see new messages — that's polling!
+
+
