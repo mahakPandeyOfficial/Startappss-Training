@@ -142,4 +142,9 @@ gcTime stands for Garbage Collection Time — it's a setting in TanStack Query (
 "After a query becomes unused (no component is using it), React Query will wait gcTime milliseconds before removing it from cache."
 - By Default, inactive queries are garbages collected after 5 mins, this means that if query is not being used for 5 min , the cache for that query will be cleaned up.
 
-You can change the default value of gcTime also as in useQuery hook. 
+You can change the default value of gcTime also as in useQuery hook.
+
+
+### StaleTime
+
+In react query, staleTime is a configration option that determineshow long fetched 
