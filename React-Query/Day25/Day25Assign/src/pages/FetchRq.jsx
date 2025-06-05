@@ -1,14 +1,14 @@
-import React from "react";
-//import { useEffect, useState } from 'react'; replaced by useQuery
-import { fetchPosts } from "../api/api"; // Adjust the import path as necessary
-import { useQuery } from "@tanstack/react-query"; // Ensure you have react-query installed
+import React, { useState } from "react";
+import { fetchPosts } from "../api/api";
+import { useQuery } from "@tanstack/react-query";
+import "../style/fetchRq.css"; // External CSS file
 
 const FetchRq = () => {
-  // const [post, setPost ]= useState([]);  //Replaced by useQuery
+  const [pageNo, setPageNo] = useState(1);
 
   const getPostData = async () => {
     try {
-      const res = await fetchPosts();
+      const res = await fetchPosts(pageNo, 3); // Limit to 3 items per page
       return res.status === 200 ? res.data : [];
     } catch (error) {
       console.error(error);
@@ -16,39 +16,41 @@ const FetchRq = () => {
     }
   };
 
-  /*    //Replaced by useQuery
-    useEffect(() => { 
-       getPostData();
-    })
-    */
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["posts", pageNo],
+    queryFn: getPostData,
+    keepPreviousData: true,
+  });
 
-    const { data, isLoading, isError, error } = useQuery({
-        queryKey: ['post'],
-        queryFn: getPostData
-      })
-
-      //by using useQuery, we can directly access data, isLoading , isError and error as it is provided as default by react-query
-      if(isLoading) {
-        return <div>Loading...</div>;
-      }
-      if(isError) {
-        return <div>Error: {error.message}</div>;
-      }
+  if (isLoading) return <div className="loading">Loading...</div>;
+  if (isError) return <div className="error">Error: {error.message}</div>;
 
   return (
-    <div>
-      <h1>Fetch with React Query</h1>
-      <ul>
+    <div className="container">
+      <h1 className="title">React Query Learning</h1>
+
+      <div className="card-container">
         {data?.map((item) => {
-          const { id, title, body } = item; // Destructure the item object
+          const { id, title, body } = item;
           return (
-            <li key={id}>
-              <h2>{title}</h2>
+            <div className="card" key={id}>
+              <h2>{id}</h2>
+              <h3>{title}</h3>
               <p>{body}</p>
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </div>
+
+      <div className="pagination">
+        <button onClick={() => setPageNo((prev) => Math.max(prev - 1, 1))} disabled={pageNo === 1}>
+          PREV
+        </button>
+        <p style={{color: "black"}}>{pageNo}</p>
+        <button onClick={() => setPageNo((prev) => prev + 1)} disabled={data.length < 3}>
+          NEXT
+        </button>
+      </div>
     </div>
   );
 };
