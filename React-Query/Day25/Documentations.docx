@@ -147,4 +147,15 @@ You can change the default value of gcTime also as in useQuery hook.
 
 ### StaleTime
 
-In react query, staleTime is a configration option that determineshow long fetched 
+In react query, staleTime is a configration option that determineshow long fetched data is considered fresh before it needs to be refatched.
+
+Here's how it works:
+Freash Data: When data is initially fetched or updated,its considered fresh.
+
+Stale Data: After the staleTime duration(specified in milliseconds) elapses, the data is considered.
+
+Default Value: the default staleTime is 0, it means it immediatly Stale after being fresh.
+
+### Polling 
+
+In React Query , Polling refers to the technique of fetching data from an API at regular interval of time to keep the UI up to date with the latest information. This is very useful for scene where data keeps changing fgrequently and you want to display real time in Ui without  requering the user to manualy refresh the page.
