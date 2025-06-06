@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { fetchPosts } from "../api/api";
 import { useQuery } from "@tanstack/react-query";
-import "../style/fetchRq.css"; // External CSS file
+import "../style/fetchRq.css"; 
 
 const FetchRq = () => {
   const [pageNo, setPageNo] = useState(1);
+
 
   const getPostData = async () => {
     try {
@@ -16,12 +17,16 @@ const FetchRq = () => {
     }
   };
 
+  //queryKey is as useState and queryFn is as useEffect in react-query
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["posts", pageNo],
+    queryKey: ["posts", pageNo],    //to refatch data when pageNo changes then you have to add pageNo in QueryeKey. only then it will refetch data
+    // queryKey: ["posts"], //if you want to fetch all posts at once then you can use this
     queryFn: getPostData,
     keepPreviousData: true,
   });
 
+
+  //useQuery provides isLoading, isError, data, error and many more properties whoch makes it easy to handle loading and error states
   if (isLoading) return <div className="loading">Loading...</div>;
   if (isError) return <div className="error">Error: {error.message}</div>;
 
@@ -41,7 +46,7 @@ const FetchRq = () => {
           );
         })}
       </div>
-
+{/** here we have to make the button disabled when it hit the limit as below 1 and more than 3 */}
       <div className="pagination">
         <button onClick={() => setPageNo((prev) => Math.max(prev - 1, 1))} disabled={pageNo === 1}>
           PREV
