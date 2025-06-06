@@ -208,6 +208,7 @@ Imagine you're refreshing a WhatsApp chat every few seconds to see new messages 
 ### useMutation Hook: 
 
 the useMutation hook is part of React Query amd is used for operations that modify data, like CREATE, UPDATE, and DELETE( Crud operations).
+"Mutation" ka matlab hota hai data ko change karna — jaise kisi nayi cheez ko add karna, update karna, ya delete karna. Ye cheezein server pe hoti hain — jaise database me record update karna.
 
 Syntax: 
 ```
@@ -223,3 +224,12 @@ for example:
   - onSettled: A callback function that runs regardless of success or failure.
   - mutationKey: A unique key too identify the mutations in the cache.
   - retry: The number of times to retry the mutation if it fails.
+
+*-*-*-*-*-*-
+.mutate() is a function in the react query which is used to excute the mutation in react query. 
+.mutate() ek function hai jo aap useMutation() se milta hai. Iska kaam hota hai:
+.mutate(data) ko call karo jab aap actual mein server pe data bhejna chahte ho.
+
+Mutation ko manually trigger karna — yaani jab aapko data bhejna ho (POST, PUT, DELETE).
+
+

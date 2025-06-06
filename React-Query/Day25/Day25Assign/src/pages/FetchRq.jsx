@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { fetchPosts } from "../api/api";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation } from "@tanstack/react-query";
 import "../style/fetchRq.css"; 
 
 const FetchRq = () => {
@@ -25,6 +25,12 @@ const FetchRq = () => {
     keepPreviousData: true,
   });
 
+  //useMutations hook is used to create, update or delete data
+  //!Here we are going to delete the post using useMutation hook.
+  const deleteMutation = useMutation({
+     mutationFn: (id) => deletePost(id), //deletePost is a function that will delete the post
+  })
+
 
   //useQuery provides isLoading, isError, data, error and many more properties whoch makes it easy to handle loading and error states
   if (isLoading) return <div className="loading">Loading...</div>;
@@ -38,11 +44,16 @@ const FetchRq = () => {
         {data?.map((item) => {
           const { id, title, body } = item;
           return (
+            <>
+            
             <div className="card" key={id}>
               <h2>{id}</h2>
               <h3>{title}</h3>
               <p>{body}</p>
+              <button onClick={() => deleteMutation.mutate(id)}>Delete</button>
             </div>
+            
+            </>
           );
         })}
       </div>
