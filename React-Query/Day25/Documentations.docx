@@ -231,5 +231,63 @@ for example:
 .mutate(data) ko call karo jab aap actual mein server pe data bhejna chahte ho.
 
 Mutation ko manually trigger karna — yaani jab aapko data bhejna ho (POST, PUT, DELETE).
+when you call .mutate(), it tells React Query to run the mutation function defined inside the useMutation hook. This is needed bcz the mutation hook. 
 
+
+### Background Refetching & Synchronization in React Query
+📌 Problem samjho pehle:
+Jab aap ek component me data fetch karte ho aur user us data ko update karta hai (like adding/deleting/editing), toh dusre component ya page ko kaise pata chale ki data change ho gaya?
+
+React Query is problem ko automatically handle karta hai using background refetching and cache synchronization.
+
+🧠 1. Background Refetching – Parde ke peeche data fresh karna
+Jab bhi user:
+
+Page dobara kholta hai
+
+Window/tab ko focus karta hai
+
+Internet reconnect hota hai
+
+React Query automatically refetch karta hai data ko taaki latest data show ho.
+
+🔄 Example:
+jsx
+Copy
+Edit
+useQuery({
+  queryKey: ['todos'],
+  queryFn: fetchTodos,
+  staleTime: 10000, // 10 sec tak data fresh maana jayega
+});
+Hinglish:
+Yaha React Query har 10 sec ke baad background me data refetch karega agar zarurat ho — bina UI ko disturb kiye.
+
+🔁 2. Synchronization – Sab jagah updated data show karna
+Agar aap kisi component me mutation karte ho (POST, PUT, DELETE), toh React Query ka queryClient.invalidateQueries() use karke purani cache ko hata ke fresh data fetch kar sakte ho.
+
+🔨 Example:
+jsx
+Copy
+Edit
+const queryClient = useQueryClient();
+
+const mutation = useMutation(addTodo, {
+  onSuccess: () => {
+    // Sabhi jagah 'todos' data fresh ho jayega
+    queryClient.invalidateQueries(['todos']);
+  },
+});
+Hinglish:
+Jab user naya todo add karega, toh sabhi jagah ['todos'] ka data refresh ho jayega. Yani sync ho jaayega.
+
+⚙️ Behind the Scenes:
+Feature	Kya karta hai
+refetchOnWindowFocus (default: true)	Window dobara focus hone par data refetch
+refetchOnReconnect (default: true)	Net reconnect hone par data refetch
+refetchInterval	Auto refetch after every x milliseconds
+invalidateQueries	Cache ko stale bana ke fresh data fetch karta hai
+
+✅ Final Tip:
+React Query smart hai. Ye data ko cache karta hai, background me update karta hai, aur UI ko sync rakhta hai — aapko manual state management karne ki zarurat nahi padti.
 

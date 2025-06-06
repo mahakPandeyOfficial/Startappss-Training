@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { fetchPosts } from "../api/api";
+import { fetchPosts, deletePost } from "../api/api";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import "../style/fetchRq.css"; 
 

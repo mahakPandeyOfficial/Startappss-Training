@@ -8,3 +8,7 @@ const api = axios.create({
 export const fetchPosts = (page = 1, limit = 3) => {
     return axios.get(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}`);
   };
+
+  export const deletePost = (id) => {
+    return api.delete(`/posts/${id}`);
+  }
