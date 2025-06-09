@@ -58,4 +58,21 @@
 5. It provides access to File System.        |   5. It do not provide access to File bcz of security reason.
   (fs modules).                              |  
 6. It Dont proovides access to DOM           |   6. It provides Full DOM Access.
-7. 
+7. Package manager available is NPM          |   7. It does'nt provides packahge manager.
+
+8  Node.js JavaScript ko browser ke bahar    |   8. Browser JS sirf web pages ke andar chalta hai.
+   chalaata hai (server pe).
+
+
+#### Modules : We split our code into different files to maintain, organize and reuse code whenever possible. A module system allows us to split and include code and import code written by other developers whenever required.
+
+       CommonJS is a module system for JavaScript, mostly used in Node.js, to write modular and reusable code by splitting it into separate files.
+
+       In simple terms:
+
+         ** CommonJS allows you to export functions, objects, or variables from one file, and import them in another using require().
+
+       Syntax :
+       
+            Export something - 	module.exports = value
+            Import something - 	const x = require('...')  
