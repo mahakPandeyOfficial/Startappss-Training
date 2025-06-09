@@ -1,4 +1,4 @@
-#### Introduction to Node JS:
+#### Introduction to Node JS: Node.js was created in 2009 by Ryan Dahl
 
    Node.js ek JavaScript runtime environment hai jiske through aap JavaScript ko browser ke bahar (server side) pe run kar sakte ho.
 
@@ -36,3 +36,26 @@
 
         ** Is wajah se hum JavaScript se backend server bhi bana sakte hain.
 
+      Digramitacallyyy Showing asynchronous Operations:
+
+
+                Clients
+                 ______                                                               ((((workers))))
+                |______|  --->           ----------->   delegate long timing jobs      ----------->
+                 ______       request    <-----------    callback                      <-----------
+                |______|  ---> 
+
+
+#### Diffrence Between Browser and Node.JS
+
+     NodeJS                                  |                 Browser
+1. It support Server Side                    |   1. It support Client Side environment
+2. Global object used is "global"            |   2. Global object used is "window"
+3. API are available as File System,         |   3. API available are DOM, localstorage, fetch , alert.
+   HTTPS, Buffer etc.                        |
+4. Modules supports are CommonJS(require,    |   4. It supports ES Modules (import, export).
+   module.export).                           |
+5. It provides access to File System.        |   5. It do not provide access to File bcz of security reason.
+  (fs modules).                              |  
+6. It Dont proovides access to DOM           |   6. It provides Full DOM Access.
+7. 
