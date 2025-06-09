@@ -66,7 +66,7 @@
 
 #### Modules : We split our code into different files to maintain, organize and reuse code whenever possible. A module system allows us to split and include code and import code written by other developers whenever required.
 
-       CommonJS is a module system for JavaScript, mostly used in Node.js, to write modular and reusable code by splitting it into separate files.
+      CommonJS => CommonJS is a module system for JavaScript, mostly used in Node.js, to write modular and reusable code by splitting it into separate files.
 
        In simple terms:
 
@@ -76,3 +76,51 @@
        
             Export something - 	module.exports = value
             Import something - 	const x = require('...')  
+      
+      ESM (ECMAScript Modules) => ESM stands for ECMAScript Modules, which is the official, modern  standard for using modules in JavaScript — supported by browsers and Node.js (with small setup).
+      ESM allows you to import/export code between files using import and export keywords.
+
+         - It is standardize by Javascript.
+         - It works on both Browser and Node.JS
+         - It Allows Tree Shaking as unused code is removed.
+         - It provides Cleaner and more reusable and readable code. 
+
+         ***Syntax:
+
+         "export" : It is used to send and then use the function variable or class outof the file.
+         "import" : It is used to take use of Code from other files.
+
+         These methods can works in both browser and Node.js (ES6).
+
+
+     NOTE:
+     __________________________________________________________________________________
+    |  In browsers, the top-level scope is the global scope, and its global object is  |
+    | called the window object. Within the browser, var something will define a new    | 
+    |global variable inside the window object. In Node.js, this is different.          |
+    | The top-level scope is not the global scope; var something inside a Node.js      |
+    |module will be local to that module. 
+    ____________________________________________________________________________________                                                             
+    
+##### NPM
+  
+  npm is the world's largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
+
+        npm consists of three distinct components:
+
+        - the website
+        - the Command Line Interface (CLI)
+        - the registry
+
+  It is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. A plethora of Node.js libraries and applications are published on npm, and many more are added every day
+   
+
+        🚀 What is npx?
+            npx is a command-line tool that comes with npm (version 5.2+ and later).
+            👉 It lets you run Node.js packages directly from the command line, without installing them globally.
+
+            | `npm install`                   | `npx`                               |
+            | ------------------------------- | ----------------------------------- |
+            | Installs package (local/global) | Executes package directly           |
+            | Leaves files on disk            | No permanent files unless needed    |
+            | Used for dependencies           | Used for one-time command execution |
