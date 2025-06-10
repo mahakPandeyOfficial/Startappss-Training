@@ -141,4 +141,86 @@
      ** TCP (Transmission Control Protocol):
       - Ensures reliable, ordered and error-checking while deliverry over the internet.
       - It Establishes a connection before data is transmitted.
+   
+#### createServer() : The http.createServer() method turns your computer into an HTTP server.
+      The http.createServer() method creates an HTTP Server object.
+      The HTTP Server object can listen to ports on your computer and execute a function, a requestListener, each time a request is made.
+
+      Syntax
+      http.createServer(requestListener);
+
+### Request and Response in NodeJS:
+
+    These two objects are passed in createServer() everytime. These two objects are automatically passed to the callback function when you use http.createServer() in Node.js.
+
+    req - "Request Object"
+    res - "Response Object"
+
+    basic syntax: 
+                  const http = require('http');
+
+                  const server = http.createServer((req, res) => {
+                     // req = request (from client)
+                     // res = response (back to client)
+                  });
+    
+     req (request): Client kya bhej raha hai (browser, Postman se request)
+     res (response): Server client ko kya reply kar raha hai
+
+     Property used in Response object :
+
+      | Method / Prop     | Purpose (Hinglish)              |
+      | ----------------- | ------------------------------- |
+      | `res.writeHead()` | Status code & headers set karna |
+      | `res.write()`     | Body ka content bhejna          |
+      | `res.end()`       | Response close karna            |
+      | `res.setHeader()` | Custom header set karna         |
+      | `res.statusCode`  | Directly status set karna       |
+
+   Property used in Request object :
+
+      | Property         | Purpose (Hinglish)                |
+      | ---------------- | --------------------------------- |
+      | `req.url`        | Kaunsi URL hit ki                 |
+      | `req.method`     | GET, POST, etc.                   |
+      | `req.headers`    | Browser, agent info, tokens, etc. |
+      | `req.on('data')` | POST data lene ke liye            |
+      | `req.on('end')`  | Jab pura data receive ho jaye     |
+
+
+### Event Loop:
+                Event Loop is the heart of Node.js.
+                It allows non-blocking, asynchronous operations — so that Node.js can handle thousands of requests at once on a single thread.
+
+### EventEmmiter : 
+               EventEmitter ek Node.js ka module hai jo aapko custom events create aur handle karne ki power deta hai.
+               Jaise: Jab koi event emit ("trigger") hota hai, uske liye humne jo ("listener") lagaya hota hai vo run ho jata hai.
+         "Jaise ghar me bell bajti hai (emit), aur koi us bell ki awaaz sunke darwaza kholta hai (listener)."
+
+         Step 1: Import events modules 
+                
+                const EventEmitter = require('events');
+                const event = new EventEmitter();
+
+         Step 2: Add listener
+
+                event.on('sayMyName', () => {
+                  console.log("Mahak Pandey");
+                  });
+         
+         Step 3: Emit the event
+                
+                event.emit('sayMyName');
+
       
+      Important key features: 
+      | Term     | Meaning (Hinglish)                     |
+      | -------- | -------------------------------------- |
+      | `emit()` | Event trigger karo                     |
+      | `on()`   | Jab event aaye tab kya karna hai       |
+      | `once()` | Sirf pehli baar hi chale               |
+      | `params` | Event emit karte waqt arguments bhejna |
+
+
+
+    
