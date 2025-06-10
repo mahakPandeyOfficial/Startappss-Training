@@ -124,3 +124,21 @@
             | Installs package (local/global) | Executes package directly           |
             | Leaves files on disk            | No permanent files unless needed    |
             | Used for dependencies           | Used for one-time command execution |
+
+
+#### Protocol Used to Setup Server used in internet:
+
+     ** HTTP (HyperText Transfer Protocol):
+      - It Facilitates communication between a web browser and a server to transfer web pages.
+      - It Sends data in plain text (no encryption).
+      - Used for basic website browsing without security.
+
+     ** HTTPS (HyperText Transfer Protocol Secure):
+      - It is a secure version of HTTP Protocol , encypt data for secure communication.
+      - It uses SSL/TLS to encrpt data for secure communication.
+      - Used in online banking and ecommerce 
+
+     ** TCP (Transmission Control Protocol):
+      - Ensures reliable, ordered and error-checking while deliverry over the internet.
+      - It Establishes a connection before data is transmitted.
+      
