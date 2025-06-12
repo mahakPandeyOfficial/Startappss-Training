@@ -270,4 +270,10 @@
            -- Close Callbacks
 
             Executes close events (e.g., socket.on('close'))
-    
+
+### ASYNC CODE:
+
+  there are several code practices that node js uses Async Methods so tht they can run without "Blocking " the code.
+
+  fs.writeFileSync() : this method is syncronous so that it blocks the code until it get output.
+  fs.writeFile() : this method is asynchronous so that it does not block the code.    //THIS IS A GOOD PRACTICE TO WRITE A NON BLOCKING CODE.
