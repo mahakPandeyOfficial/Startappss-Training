@@ -222,5 +222,52 @@
       | `params` | Event emit karte waqt arguments bhejna |
 
 
+      In Node.js, the event loop is the core that handles asynchronous operations like I/O, timers, and callbacks. The event loop priority defines what gets executed first and when — especially when many async tasks are pending.
 
+                       ________________
+                      |    Timers      |
+                      ------------------
+                      ______|___________   
+                     |Pending Callbacks |
+                     --------------------
+                     ______|___________
+                    |  Idle/Prepare    |
+                    --------------------
+                    ______|___________
+                   |       Poll       |
+                   --------------------
+                   ______|___________
+                   |  Check/Run      |
+                   -------------------
+                   ______|___________
+                   |Close Callbacks  |
+                   -------------------
+
+
+      *** Node.js Event Loop Phases (in order)
+            Each tick of the event loop processes these phases:
+
+           -- Timers
+
+            Executes callbacks from setTimeout() and setInterval()
+
+           -- Pending Callbacks
+
+            Executes I/O callbacks deferred to the next loop
+
+           -- Idle/Prepare
+
+            Internal use
+
+           -- Poll
+
+            Retrieves new I/O events; executes I/O callbacks
+
+           -- Check
+
+            Executes setImmediate() callbacks
+
+           -- Close Callbacks
+
+            Executes close events (e.g., socket.on('close'))
     
