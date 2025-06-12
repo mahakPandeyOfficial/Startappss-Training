@@ -1,0 +1,84 @@
+1️⃣ npm init – Start a New Node Project
+When you run:
+```
+npm init
+
+```
+      It creates a package.json file — which is like the heart of your Node.js project. It stores important info like:
+
+               - Project name
+
+               - Version
+
+               - Entry file (e.g., index.js)
+
+               - Dependencies (packages you install)
+
+               - Scripts (commands you run)
+
+          **  To skip all questions and generate default config:  npm init -y  ** 
+
+
+2️⃣ npm scripts – Shortcuts to Run Commands
+            In your package.json, there's a "scripts" section like this:
+
+            ```
+            "scripts": {
+            "start": "node app.js",
+            "dev": "nodemon app.js",
+            "test": "echo \"No tests yet!\""
+            }
+            ```
+            You can run them like:
+
+            ```
+            npm run dev
+            npm start   # (shortcut for the "start" script)
+
+            ```
+
+
+                ✨ Benefit: You don’t have to remember long terminal commands.
+
+3️⃣ npm packages – Reusable Code You Install
+
+        Types of packages:
+        ✅ Built-in: Already in Node.js (like fs, http)
+
+        🌐 Third-party: You install them using npm install
+
+        Example:
+        
+        ```
+        npm install axios
+        
+        ```
+        *** This adds axios to your dependencies, and you can use it in your code:   const axios = require('axios'); ***
+
+       
+4️⃣ nodemon – Auto Restart Server When You Save Code
+                If you're building a backend app, instead of manually running:
+
+                ```
+                node app.js
+                ```
+
+                ...every time you change code — use nodemon:
+
+                ```
+                npm install nodemon --save-dev
+                ```
+
+                Then in your package.json:
+
+                ```
+                "scripts": {
+                "dev": "nodemon app.js"
+                }
+                ```
+
+                Now just run:
+
+                ```
+                npm run dev
+                ```

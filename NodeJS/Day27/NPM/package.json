@@ -1,0 +1,14 @@
+{
+  "name": "npm_learning",
+  "version": "1.0.0",
+  "description": "This is a Learning Temp Template for NPM",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "start":"node app.js",
+    "dev": "nodemon app.js",
+    "build": "echo 'Building the project..."
+  },
+  "author": "Mahak Pandey",
+  "license": "ISC"
+}
