@@ -1,0 +1,11 @@
+{
+  "name": "error_debugging",
+  "version": "1.0.0",
+  "description": "This is for error n debugging notes are also there",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Mahak Pandey",
+  "license": "ISC"
+}
