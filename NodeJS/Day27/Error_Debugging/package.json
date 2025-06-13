@@ -4,7 +4,8 @@
   "description": "This is for error n debugging notes are also there",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "noedmon app.js"
   },
   "author": "Mahak Pandey",
   "license": "ISC"

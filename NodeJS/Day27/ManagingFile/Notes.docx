@@ -1,0 +1,66 @@
+📁 What is "fs" in NODE JS?
+
+        fs = File System module
+        It allows you to " read, write, update, delete " files from your code.
+        IN EASY LANG: "Node.js ka fs module use karke hum computer ke files aur folders ke saath kaam kar sakte hain — bina manually open kiye."
+
+        ✅ Step 1: Import fs module
+
+                const fs = require('fs');
+        
+       
+        🔸 1. Read File (Asynchronous)
+
+        
+        ```` SYNTAX: 
+                fs.readFile('demo.txt', 'utf8', (err, data) => {
+                if (err) {
+                    console.error("Error reading file:", err);
+                } else {
+                    console.log("File Content:", data);
+                }
+                });
+         ````       
+
+        "Ye file ko background me read karta hai. Jab kaam ho jata hai, tab callback function run hota hai."
+        
+        🔸 2. Write to File (Creates or Overwrites)
+
+        ````
+
+            fs.writeFile('demo.txt', 'Hello Mahak!', (err) => {
+            if (err) throw err;
+            console.log("File written successfully!");
+            });
+
+        ````    
+           
+        "Agar file nahi hai to bana dega, aur agar hai to overwrite karega."
+
+        🔸 3. Append to File
+
+
+        ```` SYNTAX: 
+            fs.appendFile('demo.txt', '\nAppended text.', (err) => {
+            if (err) throw err;
+            console.log("Text added to file.");
+            });
+
+        ````
+            
+            "Pichle content ke baad naya text jodta hai."
+
+        🔸 4. Delete File
+            
+            ````
+                    fs.unlink('demo.txt', (err) => {
+                    if (err) throw err;
+                    console.log("File deleted.");
+                    });
+                    
+            ````     
+
+       🔸 5. Check if File Exists
+            
+            fs.existsSync('demo.txt'); // returns true or false
+
