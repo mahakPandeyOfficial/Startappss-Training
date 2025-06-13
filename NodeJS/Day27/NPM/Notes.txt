@@ -55,6 +55,15 @@ npm init
         ```
         *** This adds axios to your dependencies, and you can use it in your code:   const axios = require('axios'); ***
 
+        To install any packages follow this Command:  npm install <package-name>
+
+        1. -save : Add the package to the projects dependencies in package.json.
+        2. -save-dev : Add the package to the Project's devDependenncies (used only in developement) in package.json.
+        3. -g : Install the package globally, making it available in your whole system not just a project.
+        4. -savee-exact : Install tthe exact version specified without updating for newwer version.
+        5. -force : Forces npm to fetch and install package even if they already installed.
+
+
        
 4️⃣ nodemon – Auto Restart Server When You Save Code
                 If you're building a backend app, instead of manually running:
