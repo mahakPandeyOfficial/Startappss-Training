@@ -1,0 +1,87 @@
+🔷 What is Express JS?
+
+    Express JS is a minimal and flexible NODE JS web application framework that provides a list of features for building web and mobile application easily. 
+
+            - It simplifies the process of creating a server.
+
+            - Works on top of Node.js's native HTTP module.
+
+            - Follows middleware architecture for handling requests and responses.
+
+ 🔷 Need of Express JS?
+       
+       1. Express JS Simplify Server Creation: Helps in quickly setting up and running a web server without the need for complex coding.
+       2. Routing Management: Provides a powerful routing mechnaism  to handle URLs and HTTP methods effectivly.
+       3. Middleware Support : Allows the use of Middleware to handel request and response as well as middleware operations.
+       4. API develpoment: Facilitates easy and effecient creation of RESTfull Api.
+       5. Community and Plugins: It has a vast and large ecosystem with numerous plugins and extentions.
+
+
+🔷 Compare Node JS vs Express JS for creating Server:
+
+        | Feature              | Node.js Only                   | Express.js                                    |
+        | -------------------- | ------------------------------ | --------------------------------------------- |
+        | Routing              | Manual using `if/else`         | Easy using `app.get()`, `app.post()`          |
+        | Response Handling    | `res.writeHead()`, `res.end()` | `res.send()`, `res.json()`                    |
+        | Middleware           | Not built-in                   | Yes, very easy with `app.use()`               |
+        | Request Body Parsing | Manual (needs extra code)      | Built-in via `express.json()`, `urlencoded()` |
+        | Code Length          | More lines                     | Short and clean                               |
+        | Readability          | Less readable for beginners    | Beginner-friendly                             |
+
+
+🔷 Different Syntax for Node JS and Express Js used for creating Server:
+
+      Node JS => 
+               const http = require("http");
+
+               const server = http.createServer((req, res) => {
+
+                if(req.url === "/" && req.method === "GET") {
+                    res.writeHead(200, { "Content-Type" : "text/plain" });
+                    res.end("HEllO from Node.js");
+                }else{
+                    res.writeHead(404, { 'Content-Type' : 'text/plain'});
+                    res.end('Page not Found');
+                }
+               });
+
+               server.listen(3000, () => {
+                console.log("Server running at http://localhost:3000")
+               });
+
+               ❗ Problems with Node.js Only:
+                    Routing is manual (you have to write if/else for every URL).
+
+                    No middleware (e.g. logging, auth, body parsing).
+
+                    Response headers and status codes have to be written manually.
+
+                    No built-in request body parsing.
+
+
+     Express JS => 
+
+                const express = require('express');
+                const app = express();
+
+                app.get('/', (req, res) =>  {
+                    res.send('Hello from Express");
+                })        
+
+                app.listen(3000, ()=> {
+                    console.log('Server is running at http://localhost:3000');
+                });
+
+        ✅ Benefits with Express:
+            Built-in routing system: app.get(), app.post(), etc.
+
+            Built-in middleware system: easy to add logging, parsing, auth.
+
+            Response sending is simpler: res.send(), res.json().
+
+            Easily handles query params, path params, etc.
+
+            Easy to connect with databases, template engines, and static files.        
+
+
+            
