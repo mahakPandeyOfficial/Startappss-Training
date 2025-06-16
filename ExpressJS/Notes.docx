@@ -84,4 +84,26 @@
             Easy to connect with databases, template engines, and static files.        
 
 
-            
+🔷 Installation of Express JS?
+
+                    cmd:  npm install express --save
+
+
+    Flow Diagram : 
+                   
+                   🔻 Request from client
+                            |
+                            v
+                [ Middleware 1 ] → logs, auth, parse body
+                            |
+                            v
+                [ Middleware 2 ] → check token, etc.
+                            |
+                            v
+                [ Route Handler ] → app.get('/user', ...)
+                            |
+                            v
+                     [ Send Response ]
+                            |
+                            v
+                🔺 Response to client
