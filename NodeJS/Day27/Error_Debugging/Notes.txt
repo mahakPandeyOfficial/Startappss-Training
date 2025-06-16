@@ -1,0 +1,97 @@
+Common types of Error :
+
+| Error Type     | Description (Hinglish)                    | Crashes? |
+| -------------- | ----------------------------------------- | -------- |
+| Syntax Error   | Galat likha hua code (grammar)            | Yes      |
+| Runtime Error  | Code run hote waqt fail hota hai          | Yes      |
+| Logical Error  | Code chalta hai but galat output deta hai | No       |
+| Type Error     | Variable galat use ho raha                | Yes      |
+| ReferenceError | Undefined variable ka use                 | Yes      |
+| RangeError     | Invalid range diya gaya                   | Yes      |
+
+Debugging Tools used are as follow: 
+
+| Tool             | Use                           |
+| ---------------- | ----------------------------- |
+| `console.log()`  | Variables check karne ke liye |
+| `try...catch`    | Errors pakadne ke liye        |
+| `node inspect`   | Line-by-line check karna      |
+| VS Code Debugger | Breakpoints + live values     |
+| Chrome DevTools  | Browser JS debugging          |
+
+
+💥 Types of Errors
+Let’s go one-by-one with examples + Hinglish:
+
+1. ✅ Syntax Error (Grammar mistake)
+        These happen when you write invalid code — like missing brackets, quotes, or wrong punctuation.
+
+🔸 Example:
+
+        console.log("Hello
+
+        🧠 Hinglish:
+        "Yaha quote close nahi kiya — grammar galat hai."
+
+🔧 Fix:
+
+        console.log("Hello");
+
+2. ⚙️ Runtime Error (Error at execution time)
+Code is written correctly, but it fails when run due to invalid logic or missing variables.
+
+🔸 Example:
+
+        let a = 10;
+        console.log(b);  // ❌ b is not defined
+        🧠 Hinglish:
+        "Code likhna sahi tha, but ek variable b define nahi kiya, isliye run time pe error aaya."
+
+3. 📉 Logical Error (Wrong output, no crash)
+        Code runs successfully but output is wrong due to wrong logic.
+
+🔸 Example:
+
+        function add(a, b) {
+        return a - b; // ❌ logic galat hai
+        }
+
+        console.log(add(5, 3)); // Output: 2 (Galat!)
+        🧠 Hinglish:
+        "Code crash nahi hua, but galat result diya — ye sabse dangerous error hota hai."
+
+4. 📄 Type Error
+        Using a variable in the wrong way (e.g., trying to call something that’s not a function)
+
+🔸 Example:
+
+        let num = 5;
+        num(); // ❌ TypeError: num is not a function
+        🧠 Hinglish:
+        "Number ko function ki tarah call kar diya — isliye TypeError aaya."
+
+5. 🌐 Reference Error
+        Trying to use a variable that doesn’t exist.
+
+🔸 Example:
+
+        console.log(x); // ❌ ReferenceError: x is not defined
+        🧠 Hinglish:
+        "Jis variable ka use kiya usse pehle define hi nahi kiya."
+
+6. 📦 Range Error
+        When you pass an invalid number to something expecting a limited range.
+
+🔸 Example:
+
+        let arr = new Array(-5); // ❌ Cannot create array of negative length
+        🧠 Hinglish:
+        "Array me negative size de diya — isliye RangeError aaya."
+
+🧪 Try-Catch: Catching Errors
+
+        try {
+        let x = y + 1; // ❌ y not defined
+        } catch (error) {
+        console.log("Error caught:", error.message);
+        }
