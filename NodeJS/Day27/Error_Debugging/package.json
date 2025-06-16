@@ -8,5 +8,8 @@
     "start": "noedmon app.js"
   },
   "author": "Mahak Pandey",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
