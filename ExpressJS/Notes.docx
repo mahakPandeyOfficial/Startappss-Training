@@ -111,7 +111,8 @@
 🔷 Adding Middleware: 
             
             🧩 What is Middleware in Express.js?
-                    In Express.js, middleware is a function that executes during the request-response cycle. It sits between the incoming request and the final response, and it can:
+                    In Express.js, middleware is a function that executes during the request-response cycle.
+                    Order is VERY IMPORTANT in MIDDLEWARE. It sits between the incoming request and the final response, and it can:
 
                            - Access and modify the request (req)
 
