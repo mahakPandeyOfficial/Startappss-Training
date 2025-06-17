@@ -107,3 +107,47 @@
                             |
                             v
                 🔺 Response to client
+
+🔷 Adding Middleware: 
+            
+            🧩 What is Middleware in Express.js?
+                    In Express.js, middleware is a function that executes during the request-response cycle. It sits between the incoming request and the final response, and it can:
+
+                           - Access and modify the request (req)
+
+                           - Access and modify the response (res)
+
+                           - End the response cycle
+
+                           - Call the next middleware using next()
+
+                            { Request ko aage bhejna hai ya nahi (next() bolke)
+                              Request/response mein kuch badlav karna hai ya nahi
+                              Ya seedha response bhejna hai (aur request wahi pe khatam kar dena hai)}
+            
+            EXAMPLE: Sochiye ek customer (browser) aapki dukaan (server) pe aaya hai.
+                     Middleware waisa staff hai jo customer ke andar aane se pehle:
+
+                        1. Uski entry register karta hai (logging)
+
+                        2. Check karta hai mask pehna hai ya nahi (authentication)
+
+                        3. Uska bag check karta hai (security)
+
+                        4. Phir usse andar jane deta hai ya mana kar deta hai
+
+ 🔷  TYPES OF MIDDLEWARE IN EXPRESS:
+                | Type                  | Description                                                 |
+                | --------------------- | ----------------------------------------------------------- |
+                | Application-level     | Use globally via `app.use()` or per-route                   |
+                | **Router-level**      | Similar to app-level, but attached to `express.Router()`    |
+                | **Built-in**          | Like `express.json()`, `express.static()`                   |
+                | **Third-party**       | Like `morgan`, `cors`, `body-parser`                        |
+                | **Error-handling**    | Special middleware to handle errors `(err, req, res, next)` |
+
+🔷 SYNTAX: 
+          app.use((req, res, next) => {
+           ..........
+            next(); // go to next middleware or route , 
+                    //If this is not goes to next until then it will wait for this middleware  to wait for responsing and then moving to next middleware.
+        });                
