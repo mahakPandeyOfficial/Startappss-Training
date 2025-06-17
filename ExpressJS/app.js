@@ -1,23 +1,17 @@
 import express from 'express';
-
 const app = express();
 const PORT = 8000;
 
 // Middleware
-app.use((req, res, next) => {
+app.get((req, res, next) => {
     console.log("This is first dummy middleware");
-    next();
-    
+    next(); 
 });
 
 app.use((req, res, next ) => {
-    console.log("This is first dummy middleware");
-    next();
+    console.log("This is second dummy middleware");
+    
 });
-
-app.use("/", (req, res) => {
-
-})
 
 
 
