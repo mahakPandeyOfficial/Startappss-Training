@@ -29,7 +29,7 @@ app.get('/contact-us', (req, res) => {
                 <label>Message:</label>
                     <input type="text" placeholder="Enter your message" />
                     <button type="submit">Submit</button>
-                    </form>`);
+            </form>`);
                 
 
 });
