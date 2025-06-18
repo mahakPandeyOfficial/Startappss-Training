@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 const app = express();
 const PORT = 8000;
 
@@ -33,6 +34,9 @@ app.get('/contact-us', (req, res) => {
                 
 
 });
+
+//body parser middleware : currently not in used as it is deprecated
+app.use(bodyparser.urlencoded({ extended : true}));
 
 app.post('/contact-us', (req, res, next)=> {
     console.log("Thank you for contacting us!", req.url, req.method);
