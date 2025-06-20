@@ -1,21 +1,17 @@
-//Core modules
+//Core Modules
 import path from 'path';
-import { fileURLToPath } from 'url';
 
-// External modules
-
+//External Modules
 import express from "express";
-const userRouter = express.Router();
 
 //Local Modules
-import { rootDir } from '../utils/pathUtil.js'; // Importing the path utility module
+import { rootDir } from '../utils/pathUtil.js';
 
-// ✅ Manually define __dirname for ES Modules
-
+const userRouter = express.Router();
 
 userRouter.get("/", (req, res, next) => {
     console.log(req.url, req.method);
-    res.sendFile(path.join( rootDir, 'views', 'home.html'));
+    res.sendFile(path.join(rootDir, 'views', 'home.html'));
 });
 
 export default userRouter;

@@ -2,11 +2,13 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Convert import.meta.url to __filename
+// Get current file's path
 const __filename = fileURLToPath(import.meta.url);
 
-// Then get __dirname from __filename
+// Get directory of this file
 const __dirname = path.dirname(__filename);
 
-// Export as ES6 module
-export { __dirname as rootDir };
+// Go one level up to get the root of the project
+const rootDir = path.resolve(__dirname, '..');
+
+export { rootDir };
