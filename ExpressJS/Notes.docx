@@ -244,4 +244,25 @@
 
                             console.log(path.basename(fullPath, '.txt')); 
                             // output: notes 
-                      ```              
+                      ```        
+                 4.  path.dirname() – Folder ka path nikalna
+                     ```
+                            console.log(path.dirname('/user/mahak/notes.txt')); 
+                            // output: /user/mahak
+                     ```       
+                 5. path.extname() – File ka extension lena
+                    ```
+                            console.log(path.extname('resume.pdf')); 
+                                // output: .pdf          
+                    ```       
+              Summary Table for all the methods:
+
+                | Method       | Kya karta hai                           |
+                | ------------ | --------------------------------------- |
+                | `join()`     | Parts ko jodta hai safely (`/`, `\`)    |
+                | `resolve()`  | Absolute (poora) path banata hai        |
+                | `basename()` | File ka naam nikalta hai                |
+                | `dirname()`  | Folder ka path nikalta hai              |
+                | `extname()`  | File extension deta hai (`.js`, `.pdf`) |
+                | `parse()`    | Path ko parts mein tod deta hai         |
+           

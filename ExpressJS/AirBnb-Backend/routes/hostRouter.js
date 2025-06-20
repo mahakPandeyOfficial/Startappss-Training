@@ -1,33 +1,28 @@
+//Core Modules
+import path from "path";
+import { fileURLToPath} from 'url';
+
+//External modules
 import express from "express";
+
+//Local Modules
+import { rootDir } from '../utils/pathUtil.js';// Importing the path utility module
 
 const hostRouter = express.Router();
 
+// ✅ Manually define __dirname for ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 hostRouter.get("/add-home", (req, res, next) => {
     
-    res.send(`<h1>Register your Home here: </h1>
-        <form action="/add-home" method="POST">
-            <label>Home Name:</label>
-            <input type="text" name="homeName" placeholder="Enter your home name" required />
-            
-            <label>Location:</label>
-            <input type="text" name="location" placeholder="Enter the location" required />
-
-            <label>Price:</label>
-            <input type="number" name="price" placeholder="Enter the price per night" required />
-            
-            <input type="submit" />
-        </form>`);
+    res.sendFile(path.join( rootDir, 'views', 'addHome.html'));
 });
 
 hostRouter.post("/add-home", (req, res, next) => {
     
     //This is where we would typically save the home data to a database and here we are using body-parser middlware to parse the frm and get the data on the server
-    res.send(`<h1>Home Registered Successfully</h1>
-        <p>Home Name: ${req.body.homeName}</p>        
-        <p>Location: ${req.body.location}</p>
-        <p>Price per night: $${req.body.price}</p>
-        <a href="/">Go to Home Page</a>
-       `);
+    res.sendFile(path.join(rootDir, 'views', 'homeAdded.html'));
 });
 
 export default hostRouter;

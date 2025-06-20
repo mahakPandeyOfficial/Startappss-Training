@@ -1,10 +1,21 @@
+//Core modules
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// External modules
+
 import express from "express";
 const userRouter = express.Router();
 
+//Local Modules
+import { rootDir } from '../utils/pathUtil.js'; // Importing the path utility module
+
+// ✅ Manually define __dirname for ES Modules
+
+
 userRouter.get("/", (req, res, next) => {
     console.log(req.url, req.method);
-    res.send(`<h1>Welcome to airbnb</h1>
-        <a href="/host/add-home">Add Home</a>`);
+    res.sendFile(path.join( rootDir, 'views', 'home.html'));
 });
 
 export default userRouter;
