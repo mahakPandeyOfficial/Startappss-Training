@@ -265,4 +265,16 @@
                 | `dirname()`  | Folder ka path nikalta hai              |
                 | `extname()`  | File extension deta hai (`.js`, `.pdf`) |
                 | `parse()`    | Path ko parts mein tod deta hai         |
-           
+
+### Public Acess of Files:
+
+      if we want to access the files like css files but environment dont allow you to have access these files as it is can break  the security rules as lgics can be accses by anyone .
+
+      So it is the wany to access the file 
+
+      Step 1 : Make a folder name Public
+      Step 2 : store styling or the files that you want to access in it.
+      Step 3 : Now you static in path as it make the file pulic or accessible.
+          code: app.use(express.static(path.join(rootDir, "views", "home.html")));
+
+          ** here static is making the file accessible as it is public by convention in this way.  

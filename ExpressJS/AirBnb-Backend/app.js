@@ -29,6 +29,7 @@ app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
 app.use(userRouter);
 app.use("/host", hostRouter);          //This is the good way to handle common routes like /host/add-home etc as  It will concanate the /host with the hostRouter and we can handle all the routes related to host in the hostRouter file.
 
+app.use(express.static(path.join(rootDir, 'public'))); // To serve static files from the public directory
 
 app.use((req, res, next)=> {
     res.status(404).sendFile(path.join(rootDir,  'views', '404error.html'));
