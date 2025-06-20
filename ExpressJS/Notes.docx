@@ -189,3 +189,59 @@
 
 
 
+### Modules :
+
+   1. body-parser : cmd => npm i body-parser
+                   
+                   body-parser is a middleware that was used in Express.js to:
+
+                  🔍 Parse the body of incoming HTTP requests, especially for POST, PUT, or PATCH methods — where data is sent by the client.  (jese tumne data bheja form me ab usko display karna hai ya use karna h tumhare module me to usme use hota hai.)
+                
+                 It helps you access form or JSON data sent by the client like by :
+                  syntax : req.body
+
+
+          What it do??
+        So in start the data we get is raw by default
+        body parser converts this data into JSON format 
+        so we can easily access it using req.body.
+
+        {
+            "name": "Mahak",
+            "age": 22
+        }  
+
+        when we access name by req.body.name , it will simply give "Mahak" not full raw formed data.
+
+    2. path :
+                path Node.js ka built-in (andar se diya hua) module hai
+                jo aapko file aur folder ke paths ke saath kaam karne me help karta hai.
+
+                Step 1. Import the module-> 
+                    ```
+                       const path = require('path'); // CommonJS
+                        // OR (agar ES module use kar rahe ho)
+                        import path from 'path';  
+                    ```
+            IMPORTANT path module METHODS:
+
+                 1. `path.join()     : Parts jodna (safe tarike se)
+                      ```
+                            const filePath = path.join('folder', 'images', 'photo.jpg');
+                            console.log(filePath); 
+                      ```     
+                 2️. path.resolve() – Complete (absolute) path banana. Current working directory se     complete path banata hai.
+                      ```
+                            const result = path.resolve('folder', 'file.txt');
+                            console.log(result);      
+                      ```  
+                 3.  path.basename() – Sirf file ka naam nikalna
+                      ```
+                            const fullPath = '/user/mahak/notes.txt';
+
+                            console.log(path.basename(fullPath));       
+                            // output: notes.txt
+
+                            console.log(path.basename(fullPath, '.txt')); 
+                            // output: notes 
+                      ```              

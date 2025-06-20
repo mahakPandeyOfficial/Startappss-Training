@@ -2,10 +2,10 @@ import express from "express";
 
 const hostRouter = express.Router();
 
-hostRouter.get("/host/add-home", (req, res, next) => {
+hostRouter.get("/add-home", (req, res, next) => {
     
     res.send(`<h1>Register your Home here: </h1>
-        <form action="/host/add-home" method="POST">
+        <form action="/add-home" method="POST">
             <label>Home Name:</label>
             <input type="text" name="homeName" placeholder="Enter your home name" required />
             
@@ -19,7 +19,7 @@ hostRouter.get("/host/add-home", (req, res, next) => {
         </form>`);
 });
 
-hostRouter.post("/host/add-home", (req, res, next) => {
+hostRouter.post("/add-home", (req, res, next) => {
     
     //This is where we would typically save the home data to a database and here we are using body-parser middlware to parse the frm and get the data on the server
     res.send(`<h1>Home Registered Successfully</h1>
