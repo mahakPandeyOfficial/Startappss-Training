@@ -1,0 +1,15 @@
+###  What is EJS?
+
+      EJS (Embedded JavaScript) is a simple templating language that lets you generate HTML markup with plain JavaScript. It is commonly used in Node.js applications to dynamically render content on the server side before sending it to the client.
+
+      EJS lets you embed JavaScript code within HTML.
+
+      EJS allows you to:
+
+            - Embed JavaScript code inside HTML using <% %>
+
+            - Output dynamic data using <%= %>
+
+            - Include partial templates (reusable components)
+
+            - Loop through arrays or use conditional logic inside your HTML
