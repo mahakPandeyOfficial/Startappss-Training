@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIRBNB</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans">
+
+    <!-- Header -->
+    <header class="bg-amber-100 shadow-md p-6 flex justify-between items-center">
+      <div class="flex gap-6">
+        <a
+          href="/host/add-home"
+          class="inline-block bg-red-500 text-white font-medium px-6 py-3 rounded-lg shadow hover:bg-red-600 transition"
+        >
+          Add Home
+        </a>
+
+        <a
+          href="/"
+          class="inline-block bg-red-500 text-white font-medium px-6 py-3 rounded-lg shadow hover:bg-red-600 transition"
+        >
+          Go to Home
+        </a>
+      </div>
+    </header> 
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto mt-10 p-4">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold text-red-600 text-center mb-4">Welcome to Airbnb</h1>
+        <h2 class="text-xl font-mono text-gray-600 mb-6">Registered Homes are listed below:</h2>
+        
+        <ul class="list-disc list-inside space-y-4">
+          <% registeredHomes.forEach(function(home) { %>
+            <li class="bg-white p-4 rounded-lg shadow-md">
+              <h3 class="text-xl font-semibold text-gray-800"><%= home.title %></h3>
+              <p class="text-gray-600"><%= home.description %></p>
+              <p class="text-red-500 font-bold">Price: $<%= home.price %> per night</p>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    </main>
+
+  </body>
+</html>

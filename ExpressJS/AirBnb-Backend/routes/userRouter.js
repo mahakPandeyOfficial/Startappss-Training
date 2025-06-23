@@ -12,7 +12,8 @@ const userRouter = express.Router();
 
 userRouter.get("/", (req, res, next) => {
     console.log(registeredHomes);
-    res.sendFile(path.join(rootDir, 'views', 'home.html'));
+    //res.sendFile(path.join(rootDir, 'views', 'home.html'));     //This is used when not using ejs file
+    res.render("home", registeredHomes ); // Using EJS to render the home page with the registered homes
 });
 
 export default userRouter;

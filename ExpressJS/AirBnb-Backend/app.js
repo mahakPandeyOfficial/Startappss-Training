@@ -22,6 +22,8 @@ const __dirname = path.dirname(__filename);
 //Local Modules
 import { rootDir } from './utils/pathUtil.js';
 
+app.set('view engine', 'ejs');  // Setting up EJS as the template engine
+app.set('views', path.join(rootDir, 'views'));  // Setting the views directory for EJS templates
 
 // Middleware 
 app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
