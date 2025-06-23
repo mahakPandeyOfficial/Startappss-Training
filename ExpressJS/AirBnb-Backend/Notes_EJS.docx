@@ -13,3 +13,41 @@
             - Include partial templates (reusable components)
 
             - Loop through arrays or use conditional logic inside your HTML
+
+### Simple Syntax: 
+
+        ```
+            <!-- Simple EJS template example -->
+            <h1>Hello, <%= username %>!</h1>
+
+            <% if (isLoggedIn) { %>
+            <p>Welcome back!</p>
+            <% } else { %>
+            <p>Please log in.</p>
+            <% } %>
+
+            <ul>
+            <% users.forEach(function(user) { %>
+                <li><%= user.name %></li>
+            <% }); %>
+            </ul>
+        ```                
+
+### How to Use it?
+
+     1. Install Packages dependency: cmd = npm i ejs 
+
+     2. Set EJS as the view engine in Express: 
+           => app.set('view engine', 'ejs');      // This has to be set as it used to set view engine.
+           => app.set('views', 'views');          //This can be neglected as it is default same as views
+    
+     3. Create a file views/index.ejs and use EJS syntax there.
+
+###  When to Use EJS:
+         -   You want server-side rendering with Express.js.
+
+         -   You prefer logic in templates with basic JavaScript.
+
+         -   You are building simple or medium-complexity apps that don't need a full frontend framework like React.
+
+                
