@@ -10,7 +10,7 @@ import bodyparser from "body-parser";
 //local modules
 
 import userRouter from "./routes/userRouter.js";
-import hostRouter from "./routes/hostRouter.js";
+import { hostRouter } from "./routes/hostRouter.js";
 
 const app = express();
 const PORT = 8000;
