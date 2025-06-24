@@ -34,7 +34,8 @@ app.use("/host", hostRouter);          //This is the good way to handle common r
 app.use(express.static(path.join(rootDir, 'public'))); // To serve static files from the public directory
 
 app.use((req, res, next)=> {
-    res.status(404).sendFile(path.join(rootDir,  'views', '404error.html'));
+    //res.status(404).sendFile(path.join(rootDir,  'views', '404error.ejs'));
+    res.status(404).render("404error", {pageTitle: "404 error"});
 })
 
 

@@ -278,3 +278,17 @@
           code: app.use(express.static(path.join(rootDir, "views", "home.html")));
 
           ** here static is making the file accessible as it is public by convention in this way.  
+
+### What is Partials?
+      
+      Partials are reusable pieces of HTML code (like header, footer, navbar, etc.) that can be included in multiple pages of your app to avoid repeating code.
+
+      Think of them as mini-templates you can include inside bigger templates.
+
+      WHAT ARE BENIFITS OF PARTIALS=> 
+        | ✅ Benefit         | 💬 Description                          |
+        | ------------------ | ---------------------------------------- |
+        | DRY Code           | Don't Repeat Yourself                    |
+        | Easy to maintain   | Update header/footer in one file only    |
+        | Cleaner templates  | Less clutter in main files               |
+        | Works with layouts | Combine with full-page layouts if needed |
