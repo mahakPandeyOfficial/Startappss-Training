@@ -1,31 +1,55 @@
-//Core Modules
+// Core Modules
 import path from "path";
-import { fileURLToPath} from 'url';
+import { fileURLToPath } from 'url';
 
-//External modules
+// External modules
 import express from "express";
+import multer from "multer";
 
-//Local Modules
-import { rootDir } from '../utils/pathUtil.js';// Importing the path utility module
+// Local Modules
+import { rootDir } from '../utils/pathUtil.js';
 
 const hostRouter = express.Router();
 
-// ✅ Manually define __dirname for ES Modules
+// ✅ Define __dirname for ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-hostRouter.get("/add-home", (req, res, next) => {
-    
-    res.render("addHome", {pageTitle: "Add Home"});
+// ✅ Set up multer storage config
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(rootDir, 'public', 'uploads'));  // Save to /public/uploads
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);  // Unique file name
+  }
 });
 
+const upload = multer({ storage });
+
+// ✅ In-memory array to store homes
 const registeredHomes = [];
 
-hostRouter.post("/add-home", (req, res, next) => {
-    console.log("Home is registered successfully: ", req.body, req.body.title);
-    registeredHomes.push({homeName: req.body.title, description: req.body.description, price: req.body.price});
-    //This is where we would typically save the home data to a database and here we are using body-parser middlware to parse the frm and get the data on the server
-    res.render("homeAdded", {pageTitle: "Home Added Successfully"});
+// ✅ GET: Add Home Form
+hostRouter.get("/add-home", (req, res) => {
+  res.render("addHome", { pageTitle: "Add Home" });
+});
+
+// ✅ POST: Handle home form with image upload
+hostRouter.post("/add-home", upload.single('image'), (req, res) => {
+  const { title, description, price } = req.body;
+  const image = req.file ? req.file.filename : null;
+
+  console.log("Home registered successfully:", { title, description, price, image });
+
+  registeredHomes.push({
+    title,
+    description,
+    price,
+    image
+  });
+
+  res.render("homeAdded", { pageTitle: "Home Added Successfully" });
 });
 
 export { hostRouter, registeredHomes };

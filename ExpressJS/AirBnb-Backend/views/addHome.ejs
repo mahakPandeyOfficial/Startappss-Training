@@ -7,7 +7,7 @@
 
     <!-- Main Content -->
     <main class="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
-      <form action="/host/add-home" method="POST" class="space-y-6">
+      <form action="/host/add-home" method="POST" enctype="multipart/form-data" class="space-y-6">
         <!-- Title -->
         <div>
           <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
@@ -43,6 +43,20 @@
             class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
           />
         </div>
+
+        <!-- 📸 Image Upload -->
+  <div>
+    <label for="image" class="block text-sm font-medium text-gray-700">Upload Image</label>
+    <input
+      type="file"
+      id="image"
+      name="image"
+      accept="image/*"
+      required
+      class="mt-1 block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm cursor-pointer bg-white focus:outline-none focus:ring-red-500 focus:border-red-500"
+    />
+  </div>
+
 
         <!-- Submit Button -->
         <div>
