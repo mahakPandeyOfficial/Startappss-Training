@@ -23,7 +23,7 @@ const registeredHomes = [];
 
 hostRouter.post("/add-home", (req, res, next) => {
     console.log("Home is registered successfully: ", req.body, req.body.title);
-    registeredHomes.push({homeName: req.body.title});
+    registeredHomes.push({homeName: req.body.title, description: req.body.description, price: req.body.price});
     //This is where we would typically save the home data to a database and here we are using body-parser middlware to parse the frm and get the data on the server
     res.sendFile(path.join(rootDir, 'views', 'homeAdded.html'));
 });
