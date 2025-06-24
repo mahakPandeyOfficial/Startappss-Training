@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Added Successfully</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<%- include("partials/head") %>
   </head>
-  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-
+  <body class="bg-gray-100">
+    <%- include("partials/nav") %>
+    <div class="flex items-center justify-center min-h-screen">
     <div class="text-center p-8 bg-white rounded-lg shadow-md max-w-md">
       <h1 class="text-3xl font-bold text-red-600">🏡 Home Registered Successfully</h1>
       <p class="mt-4 text-gray-700">Your listing has been added to Airbnb.</p>
@@ -18,6 +13,6 @@
         🔙 Go to Home Page
       </a>
     </div>
-
+  </div>
   </body>
 </html>
