@@ -1,0 +1,52 @@
+/* home.css */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff7f2;
+    color: #333;
+    
+  }
+  
+  /* Header */
+  header {
+    text-align: center;   
+    margin-bottom: 40px;
+    height: 100px;
+    background-color: #333;
+   
+  }
+  
+  header h1 {
+    
+    font-size: 2.5rem;
+    color: #ff5a5f;
+    
+  }
+  
+  /* Main content */
+  main {
+    display: flex;
+    justify-content: center;
+  }
+  
+  main a {
+    padding: 12px 24px;
+    background-color: #ff5a5f;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  main a:hover {
+    background-color: #e0484e;
+  }
+  
