@@ -11,6 +11,7 @@ import bodyparser from "body-parser";
 
 import userRouter from "./routes/userRouter.js";
 import { hostRouter } from "./routes/hostRouter.js";
+import NotFoundError from './controllers/errors.js';
 
 const app = express();
 const PORT = 8000;
@@ -35,10 +36,7 @@ app.use(express.static(path.join(rootDir, 'public'))); // To serve static files 
 
 app.use('/uploads', express.static('public/uploads'));
 
-app.use((req, res, next)=> {
-    //res.status(404).sendFile(path.join(rootDir,  'views', '404error.ejs'));
-    res.status(404).render("404error", {pageTitle: "Page Not Found"});
-})
+app.use(NotFoundError);
 
 
 app.listen(PORT, ()=> {
