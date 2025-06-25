@@ -8,6 +8,8 @@ import multer from "multer";
 
 // Local Modules
 import { rootDir } from '../utils/pathUtil.js';
+import {getAddHomes, postAddHomes} from "../controllers/homes.js";
+
 
 const hostRouter = express.Router();
 
@@ -31,25 +33,10 @@ const upload = multer({ storage });
 const registeredHomes = [];
 
 // ✅ GET: Add Home Form
-hostRouter.get("/add-home", (req, res) => {
-  res.render("addHome", { pageTitle: "Add Home" });
-});
+hostRouter.get("/add-home", getAddHomes );
 
 // ✅ POST: Handle home form with image upload
-hostRouter.post("/add-home", upload.single('image'), (req, res) => {
-  const { title, description, price } = req.body;
-  const image = req.file ? req.file.filename : null;
-
-  console.log("Home registered successfully:", { title, description, price, image });
-
-  registeredHomes.push({
-    title,
-    description,
-    price,
-    image
-  });
-
-  res.render("homeAdded", { pageTitle: "Home Added Successfully" });
-});
+hostRouter.post("/add-home", upload.single('image'), postAddHomes(registeredHomes));
 
 export { hostRouter, registeredHomes };
+

@@ -27,7 +27,7 @@ app.set('views', path.join(rootDir, 'views'));  // Setting the views directory f
 
 // Middleware 
 app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
-
+app.use(express.json());
 app.use(userRouter);
 app.use("/host", hostRouter);          //This is the good way to handle common routes like /host/add-home etc as  It will concanate the /host with the hostRouter and we can handle all the routes related to host in the hostRouter file.
 

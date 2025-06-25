@@ -7,13 +7,10 @@ import express from "express";
 //Local Modules
 import { rootDir } from '../utils/pathUtil.js';
 import { registeredHomes } from './hostRouter.js'; 
+import { getHomes } from "../controllers/homes.js"
 
 const userRouter = express.Router();
 
-userRouter.get("/", (req, res, next) => {
-    console.log(registeredHomes);
-    //res.sendFile(path.join(rootDir, 'views', 'home.html'));     //This is used when not using ejs file
-    res.render("home", {registeredHomes: registeredHomes, pageTitle: "airbnb home"} ); // Using EJS to render the home page with the registered homes
-});
+userRouter.get("/", getHomes(registeredHomes) );
 
 export default userRouter;

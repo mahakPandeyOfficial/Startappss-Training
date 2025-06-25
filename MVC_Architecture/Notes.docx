@@ -42,15 +42,16 @@ Diagram / FLOW of DATA in MVC:
         │  Flow)    │                   └────────────┘
         └───────────┘
 
-Explanation : 
+Explaination : 
 
--> Model: Interacts with the database and handles business/data logic.
+        -> Model: Interacts with the database and handles business/data logic.
 
--> View: Presents data to the user; dynamically updated.
+        -> View: Presents data to the user; dynamically updated.
 
--> Controller: Takes input from the user, calls the model and selects the view.
+        -> Controller: Takes input from the user, calls the model and selects the view.
 
--> Database: Actual data storage.
+        -> Database: Actual data storage.
 
--> End User: Interacts with the system via UI.
+        -> End User: Interacts with the system via UI.
+
 
