@@ -1,16 +1,18 @@
-//Core Modules
+// Core Modules
 import path from 'path';
 
-//External Modules
+// External Modules
 import express from "express";
 
-//Local Modules
+// Local Modules
 import { rootDir } from '../utils/pathUtil.js';
 import { registeredHomes } from './hostRouter.js'; 
-import { getHomes } from "../controllers/homes.js"
+import { getHomes } from "../controllers/homes.js";
 
+// ✅ Declare router before using it
 const userRouter = express.Router();
 
-userRouter.get("/", getHomes(registeredHomes) );
+// ✅ Now it's safe to use
+userRouter.get("/", getHomes(registeredHomes));
 
 export default userRouter;

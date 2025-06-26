@@ -36,7 +36,7 @@ const registeredHomes = [];
 hostRouter.get("/add-home", getAddHomes );
 
 // ✅ POST: Handle home form with image upload
-hostRouter.post("/add-home", upload.single('image'), postAddHomes(registeredHomes));
+hostRouter.post("/add-home", upload.single('photoUrl'), postAddHomes(registeredHomes));
 
 export { hostRouter, registeredHomes };
 

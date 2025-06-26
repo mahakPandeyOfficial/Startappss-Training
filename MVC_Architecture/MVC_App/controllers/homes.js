@@ -1,4 +1,4 @@
-
+import { Home } from '../models/home.js';
 const getAddHomes = (req, res) => {
     res.render("addHome", { pageTitle: "Add Home" });
   }
@@ -6,28 +6,25 @@ const getAddHomes = (req, res) => {
 
 const postAddHomes = (registeredHomes) => {
 return (req, res) => {
-    const { title, description, price } = req.body;
-    const image = req.file ? req.file.filename : null;
-  
-    console.log("Home registered successfully:", { title, description, price, image });
-  
-    registeredHomes.push({
-      title,
-      description,
-      price,
-      image
-    });
+    const { houseName, price, location, rating  } = req.body;
+    const photoUrl = req.file ? req.file.filename : null;
+    console.log("Home registered successfully:", { houseName, price, location, rating, photoUrl }); 
+    const home = new Home(houseName, price, location, rating, photoUrl)
+    home.save();
+    
   
     res.render("homeAdded", { pageTitle: "Home Added Successfully" });
   }
 }
 
-const getHomes = (registeredHomes)=> {
-return (req, res, next) => {
-    console.log(registeredHomes);
-    //res.sendFile(path.join(rootDir, 'views', 'home.html'));     //This is used when not using ejs file
-    res.render("home", {registeredHomes: registeredHomes, pageTitle: "airbnb home"} ); // Using EJS to render the home page with the registered homes
-}
-}
+const getHomes = (registeredHomes) => {
+  return (req, res) => {
+    const homes = Home.getAll();
+    res.render("home", {
+      registeredHomes: homes,
+      pageTitle: "Airbnb Home"
+    });
+  };
+};
 
 export {getAddHomes, postAddHomes, getHomes};

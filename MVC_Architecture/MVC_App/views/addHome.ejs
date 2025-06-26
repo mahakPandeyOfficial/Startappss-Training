@@ -10,11 +10,11 @@
       <form action="/host/add-home" method="POST" enctype="multipart/form-data" class="space-y-6">
         <!-- Title -->
         <div>
-          <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+          <label for="houseName" class="block text-sm font-medium text-gray-700">House Name</label>
           <input
             type="text"
-            id="title"
-            name="title"
+            id="houseName"
+            name="houseName"
             required
             class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
           />
@@ -22,10 +22,10 @@
 
         <!-- Description -->
         <div>
-          <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+          <label for="location" class="block text-sm font-medium text-gray-700">Location</label>
           <textarea
-            id="description"
-            name="description"
+            id="location"
+            name="location"
             required
             rows="4"
             class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
@@ -44,13 +44,25 @@
           />
         </div>
 
+        <!-- Rating -->
+        <div>
+          <label for="rating" class="block text-sm font-medium text-gray-700">Rating</label>
+          <input
+            type="number"
+            id="rating"
+            name="rating"
+            required
+            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
+          />
+        </div>
+
         <!-- 📸 Image Upload -->
   <div>
-    <label for="image" class="block text-sm font-medium text-gray-700">Upload Image</label>
+    <label for="photoUrl" class="block text-sm font-medium text-gray-700">Upload Image</label>
     <input
       type="file"
-      id="image"
-      name="image"
+      id="photoUrl"
+      name="photoUrl"
       accept="image/*"
       required
       class="mt-1 block w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm cursor-pointer bg-white focus:outline-none focus:ring-red-500 focus:border-red-500"
