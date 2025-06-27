@@ -1,4 +1,5 @@
 import { Home } from '../models/home.js';
+import { registeredHomes } from '../routes/hostRouter.js';
 const getAddHomes = (req, res) => {
     res.render("addHome", { pageTitle: "Add Home" });
   }
@@ -17,11 +18,12 @@ return (req, res) => {
   }
 }
 
-const getHomes = (registeredHomes) => {
+//This is Higher order function which is returning anoter function
+const getHomes = () => {
   return (req, res) => {
-    const homes = Home.getAll();
+    const registeredHomes = Home.getAll();
     res.render("home", {
-      registeredHomes: homes,
+      registeredHomes,
       pageTitle: "Airbnb Home"
     });
   };
