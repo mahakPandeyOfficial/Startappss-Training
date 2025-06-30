@@ -13,7 +13,6 @@ return (req, res) => {
     const home = new Home(houseName, price, location, rating, photoUrl)
     home.save();
     
-  
     res.render("homeAdded", { pageTitle: "Home Added Successfully" });
   }
 }

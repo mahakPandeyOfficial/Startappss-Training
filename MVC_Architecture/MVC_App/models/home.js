@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { rootDir } from '../utils/pathUtil.js';
 
-const registeredHomes = [];
+let registeredHomes = [];
 
 export class Home {
      constructor(houseName, price, location, rating, photoUrl){
@@ -25,7 +25,17 @@ export class Home {
 
 //Add this method to access the array, ths is returning regitered homes and its all property.
   static getAll() {
+   
+      const homeDataPath = path.join(rootDir, "data", "home.json");
+      fs.readFile(homeDataPath, (err, data) => {
+         if (!err) {
+            registeredHomes =  JSON.parse(data);
+         }
+         return registeredHomes;
+        
+      });
    return registeredHomes;
+   
  }
 
 }
