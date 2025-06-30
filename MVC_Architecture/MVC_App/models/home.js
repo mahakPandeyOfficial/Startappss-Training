@@ -25,11 +25,11 @@ export class Home {
 
 //Add this method to access the array, ths is returning regitered homes and its all property.
   static getAll() {
-   
+      // This method reads the home data from the JSON file and returns it as an array of Home objects.
       const homeDataPath = path.join(rootDir, "data", "home.json");
       fs.readFile(homeDataPath, (err, data) => {
          if (!err) {
-            registeredHomes =  JSON.parse(data);
+            registeredHomes =  JSON.parse(data);   // this is used to parse the data from JSON file and convert it into an array of objects.
          }
          return registeredHomes;
         
