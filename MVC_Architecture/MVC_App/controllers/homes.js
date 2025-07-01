@@ -1,7 +1,7 @@
 import { Home } from '../models/home.js';
 import { registeredHomes } from '../routes/hostRouter.js';
 const getAddHomes = (req, res) => {
-    res.render("addHome", { pageTitle: "Add Home" });
+    res.render("host/addHome", { pageTitle: "Add Home" });
   }
   
 
@@ -13,7 +13,7 @@ return (req, res) => {
     const home = new Home(houseName, price, location, rating, photoUrl)
     home.save();
     
-    res.render("homeAdded", { pageTitle: "Home Added Successfully" });
+    res.render("host/homeAdded", { pageTitle: "Home Added Successfully" });
   }
 }
 
@@ -21,7 +21,7 @@ return (req, res) => {
 const getHomes = () => {
   return (req, res) => {
     const registeredHomes = Home.getAll();
-    res.render("home", {
+    res.render("store/home-list", {
       registeredHomes,
       pageTitle: "Airbnb Home"
     });
