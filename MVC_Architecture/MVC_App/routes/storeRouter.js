@@ -10,9 +10,10 @@ import { registeredHomes } from './hostRouter.js';
 import { getHomes } from "../controllers/homes.js";
 
 // ✅ Declare router before using it
-const userRouter = express.Router();
+const storeRouter = express.Router();
 
 // ✅ Now it's safe to use
-userRouter.get("/", getHomes(registeredHomes));
+storeRouter.get("/", getHomes(registeredHomes));
 
-export default userRouter;
+export default storeRouter;
+0
