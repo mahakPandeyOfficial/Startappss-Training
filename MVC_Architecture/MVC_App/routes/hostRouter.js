@@ -8,7 +8,8 @@ import multer from "multer";
 
 // Local Modules
 import { rootDir } from '../utils/pathUtil.js';
-import {getAddHomes, postAddHomes} from "../controllers/homes.js";
+import {getAddHomes, postAddHomes} from "../controllers/hostController.js";
+
 
 
 const hostRouter = express.Router();

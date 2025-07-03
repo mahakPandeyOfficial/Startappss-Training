@@ -17,15 +17,5 @@ return (req, res) => {
   }
 }
 
-//This is Higher order function which is returning anoter function
-const getHomes = () => {
-  return (req, res) => {
-    const registeredHomes = Home.getAll();
-    res.render("store/home-list", {
-      registeredHomes,
-      pageTitle: "Airbnb Home"
-    });
-  };
-};
 
-export {getAddHomes, postAddHomes, getHomes};
+export {getAddHomes, postAddHomes};
