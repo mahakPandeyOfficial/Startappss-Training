@@ -22,4 +22,12 @@ const getBooking = (req, res) => {
   });
 }
 
-export { getHomes, getBooking };
+const getFavorites = (req, res) => {
+  res.render("store/fav-list", {
+    pageTitle : "My Favorites",
+    currentPage: "fav-list"
+  })
+
+}
+
+export { getHomes, getBooking , getFavorites};
