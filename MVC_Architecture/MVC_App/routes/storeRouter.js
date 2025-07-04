@@ -15,6 +15,7 @@ const storeRouter = express.Router();
 // ✅ Now it's safe to use
 storeRouter.get("/", getHomes(registeredHomes));
 storeRouter.get("/bookings", getBooking);
+storeRouter.get("/index", getIndex);
 storeRouter.get("/favorites", getFavorites);
 
 export default storeRouter;
