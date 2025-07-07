@@ -7,15 +7,15 @@ import express from "express";
 // Local Modules
 import { rootDir } from '../utils/pathUtil.js';
 import { registeredHomes } from './hostRouter.js'; 
-import { getHomes , getBooking, getFavorites } from "../controllers/storeController.js";
+import { getHomes , getBooking, getFavorites, getIndex } from "../controllers/storeController.js";
 
 // ✅ Declare router before using it
 const storeRouter = express.Router();
 
 // ✅ Now it's safe to use
-storeRouter.get("/", getHomes(registeredHomes));
+storeRouter.get("/", getIndex(registeredHomes));
+storeRouter.get("/homes", getHomes(registeredHomes));
 storeRouter.get("/bookings", getBooking);
-storeRouter.get("/index", getIndex);
 storeRouter.get("/favorites", getFavorites);
 
 export default storeRouter;

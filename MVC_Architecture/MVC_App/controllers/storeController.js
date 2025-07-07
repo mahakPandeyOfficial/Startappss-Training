@@ -2,6 +2,17 @@ import { Home } from '../models/home.js';
 import { registeredHomes } from '../routes/hostRouter.js';
 
 
+//Index
+const getIndex = () => {
+  return (req, res) => {
+  const registeredHomes = Home.getAll();
+  res.render("store/index", {
+    registeredHomes,
+    pageTitle: "AirBnb",
+    currentPage: "index",
+  })
+}}
+
 
 //This is Higher order function which is returning anoter function
 const getHomes = () => {
@@ -30,4 +41,5 @@ const getFavorites = (req, res) => {
 
 }
 
-export { getHomes, getBooking , getFavorites};
+
+export { getHomes, getBooking , getFavorites, getIndex};
