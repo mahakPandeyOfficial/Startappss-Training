@@ -20,7 +20,8 @@ const getHomes = () => {
     const registeredHomes = Home.getAll();
     res.render("store/home-list", {
       registeredHomes,
-      pageTitle: "Airbnb Home"
+      pageTitle: "Airbnb Home",
+      currentPage: "homes",
     });
   };
 };

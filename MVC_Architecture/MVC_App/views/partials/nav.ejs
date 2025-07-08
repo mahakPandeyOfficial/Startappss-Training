@@ -29,7 +29,15 @@
 
       <a
         href="/"
-        class="inline-block bg-red-500 text-white font-medium px-6 py-3 rounded-lg shadow hover:bg-red-600 transition"
+        class="<%= currentPage === 'index' ? 'bg-red-400' : 'hover:bg-red-400' %> inline-block bg-red-500 text-white font-medium px-6 py-3 rounded-lg shadow hover:bg-red-600 transition"
+      >
+        Index
+      </a>
+
+      
+      <a
+        href="/homes"
+        class="<%= currentPage === 'Home' ? 'bg-red-400' : 'hover:bg-red-400' %> inline-block bg-red-500 text-white font-medium px-6 py-3 rounded-lg shadow hover:bg-red-600 transition"
       >
         Go to Home
       </a>
